@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Resmi TI Reg D BJM</title>
+    
+    <!-- Font Premium: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Realtime Cache Busting CSS -->
+    <script>
+        document.write('<link rel="stylesheet" href="css/style.css?v=' + new Date().getTime() + '">');
+    </script>
+</head>
+<body>
+
+    <!-- BACKGROUND GLOW EFEK VIDEO -->
+    <div class="bg-glow glow-purple"></div>
+    <div class="bg-glow glow-blue"></div>
+
+    <!-- NAVBAR PREMIUM -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                TI Reg <span>D BJM</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html" class="active">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="album.html">Album Kelas</a></li>
+                <li><a href="jadwal.html">Jadwal</a></li>
+            </ul>
+            <a href="contact.html" class="btn-neon">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+        <div class="container hero-content">
+            <!-- Teks Kiri -->
+            <div class="hero-text">
+                <div class="badge-neon">
+                    <i class="ph-fill ph-sparkle"></i> Ready to Innovate
+                </div>
+                
+                <h1>Welcome To Portfolio <br><span class="text-gradient">TI Reg D BJM</span></h1>
+                <p class="subtitle"></p>
+                
+                <p class="desc">Portal terpadu untuk informasi akademik, dokumentasi kegiatan kelas, dan kumpulan tugas portofolio mahasiswa TI Reg D Banjarmasin.</p>
+                
+                <!-- Tag Matkul/Skill ala Video -->
+                <div class="tech-tags">
+                    <span>Web Dev</span>
+                    <span>Jaringan</span>
+                    <span>Database</span>
+                    <span>UI/UX</span>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#tugas" class="btn-primary"><i class="ph-bold ph-folder-notch"></i> Lihat Tugas</a>
+                    <a href="#jadwal" class="btn-outline"><i class="ph-bold ph-calendar"></i> Jadwal Matkul</a>
+                </div>
+            </div>
+            
+            <!-- Visual Kanan (Animasi Lottie) -->
+            <div class="hero-visual">
+                <img src="assets/images/Programmer.svg" alt="Animasi Hero Portofolio" class="lottie-hero">
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFIL KELAS (About Us) -->
+    <section id="profil" class="section-dark">
+        <div class="container">
+            <h2 class="section-title text-center">Profil Kelas</h2>
+            <p class="section-subtitle text-center"><i class="ph-fill ph-stars"></i> Kolaborasi, Inovasi, dan Dedikasi <i class="ph-fill ph-stars"></i></p>
+            
+            <div class="profil-grid">
+                <div class="profil-text">
+                    <h3>Hello, we are <br><span class="text-gradient">TI Reg D BJM</span></h3>
+                    <p>Kami adalah ruang bagi mahasiswa yang memiliki minat besar di bidang teknologi. Berfokus pada pengembangan jaringan komputer, rekayasa perangkat lunak, dan desain antarmuka.</p>
+                    <p>Kami tidak hanya belajar di dalam kelas, tetapi juga aktif berkolaborasi membangun proyek bersama untuk memberikan solusi terbaik dalam setiap tantangan industri.</p>
+                    <a href="#struktur" class="btn-outline mt-20"><i class="ph-bold ph-users"></i> Lihat Struktur Kelas</a>
+                </div>
+                <div class="profil-image-box">
+                    <img src="assets/images/bg-team.jpg" alt="Foto Kelas TI Reg D" class="img-glow" onerror="this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALBUM KELAS (Fokus Kebersamaan Umum) -->
+    <section id="tugas" class="section-darker">
+        <div class="container">
+            <h2 class="section-title text-center">Album Kelas</h2>
+            <p class="section-subtitle text-center">Dokumentasi momen kebersamaan dan kekeluargaan TI Reg D BJM.</p>
+            
+            <!-- Custom Tabs (Filter Kategori Foto) -->
+            <div class="showcase-tabs">
+                <button class="tab-btn active"><i class="ph-bold ph-image"></i> Semua Foto</button>
+                <button class="tab-btn"><i class="ph-bold ph-student"></i> Kegiatan Kampus</button>
+                <button class="tab-btn"><i class="ph-bold ph-users-three"></i> Luar Kelas</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Foto Kebersamaan 1 -->
+                <div class="port-card">
+                    <img src="assets/images/bg-team.jpg" alt="Kebersamaan Kelas 1" style="width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <div class="port-content">
+                        <h4>Kumpul Angkatan 2026</h4>
+                        <p>Momen hangat kebersamaan dan kekompakan seluruh mahasiswa TI Reg D.</p>
+                        <div class="port-tags">
+                            <span>Angkatan 2026</span><span>Kebersamaan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto Kebersamaan 2 -->
+                <div class="port-card">
+                    <img src="assets/images/bg-team.jpg" alt="Kebersamaan Kelas 2" style="width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <div class="port-content">
+                        <h4>Momen Solidaritas</h4>
+                        <p>Potret keseruan dan solidaritas tanpa batas dari keluarga besar Reg D.</p>
+                        <div class="port-tags">
+                            <span>Solidaritas</span><span>Kekompakan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto Kebersamaan 3 -->
+                <div class="port-card">
+                    <img src="assets/images/bg-team.jpg" alt="Kebersamaan Kelas 3" style="width: 100%; height: 200px; object-fit: cover; display: block; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                    <div class="port-content">
+                        <h4>Keluarga TI Reg D</h4>
+                        <p>Bukan sekadar teman sekelas, melainkan keluarga yang saling mendukung.</p>
+                        <div class="port-tags">
+                            <span>Keluarga</span><span>Mahasiswa</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STRUKTUR KELAS & ANGGOTA -->
+    <section id="struktur" class="section-dark">
+        <div class="container">
+            <h2 class="section-title text-center">Struktur Organisasi</h2>
+            <p class="section-subtitle text-center">Pengurus inti dan anggota kelas Reg D.</p>
+            
+            <div class="tree-container">
+                <div class="tree-node node-ketua">
+                    <div class="glass-card structure-card">
+                        <div class="avatar"><i class="ph-fill ph-user-circle"></i></div>
+                        <h5>Rahmat Ridha Amrullah</h5>
+                        <span>Ketua Kelas</span>
+                    </div>
+                </div>
+                <div class="tree-branches">
+                    <div class="tree-node">
+                        <div class="glass-card structure-card">
+                            <div class="avatar">NS</div>
+                            <h5>Nasywa Syaira Pratama</h5>
+                            <span>Wakil Ketua</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Daftar Anggota / Kolom Mahasiswa -->
+            <div class="anggota-grid mt-60">
+                <div class="anggota-tag" style="padding: 12px 28px; font-size: 14px; font-weight: 600;">
+                    <i class="ph-fill ph-users-three" style="font-size: 18px; color: var(--primary);"></i> 30+ Mahasiswa / Mahasiswi TI Reg D BJM
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JADWAL MATKUL (Preview di Beranda) -->
+    <section id="jadwal" class="section-darker">
+        <div class="container" style="max-width: 800px; margin: 0 auto;">
+            <h2 class="section-title text-center">Preview Jadwal</h2>
+            <p class="section-subtitle text-center">Jadwal perkuliahan kelas TI Reg D BJM untuk awal pekan.</p>
+            
+            <div class="jadwal-glass-wrapper">
+                <!-- Data Preview Sesuai dengan Jadwal Asli -->
+                <div class="j-row">
+                    <div class="j-time">Senin, 07.30</div>
+                    <div class="j-info">
+                        <strong>Rangkaian Digital</strong>
+                        <span>Ruang 4 • Pak Rais</span>
+                    </div>
+                </div>
+                <div class="j-row">
+                    <div class="j-time">Senin, 09.10</div>
+                    <div class="j-info">
+                        <strong>Sistem Basis Data</strong>
+                        <span>Ruang 4 • Bu Nadia</span>
+                    </div>
+                </div>
+                <div class="j-row">
+                    <div class="j-time">Selasa, 14.40</div>
+                    <div class="j-info">
+                        <strong>Sistem Operasi</strong>
+                        <span>Ruang 4 • Pak Ihsanul</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tombol Mengarah ke Halaman Jadwal Penuh -->
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="jadwal.html" class="btn-primary">
+                    <i class="ph-bold ph-calendar-check"></i> Lihat Jadwal Lengkap
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="f-left">
+                <h2>TI Reg D <span>BJM</span></h2>
+                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+            </div>
+            <div class="f-right">
+                <p>&copy; 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+            </div>
+        </div>
+        
+        <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
+        <div class="mobile-bottom-nav">
+            <!-- Beranda (Aktif) -->
+            <a href="home.html" class="nav-item active">
+                <i class="ph-bold ph-house"></i>
+                <span>Beranda</span>
+            </a>
+            <!-- Album -->
+            <a href="album.html" class="nav-item">
+                <i class="ph-bold ph-squares-four"></i>
+                <span>Album</span>
+            </a>
+            <!-- Jadwal -->
+            <a href="jadwal.html" class="nav-item">
+                <i class="ph-bold ph-calendar"></i>
+                <span>Jadwal</span>
+            </a>
+            <!-- Profil -->
+            <a href="profil.html" class="nav-item">
+                <i class="ph-bold ph-user"></i>
+                <span>Profil</span>
+            </a>
+        </div>
+    </footer>
+    
+
+    <!-- MEMANGGIL FILE JAVASCRIPT UTAMA (MAIN.JS) -->
+    <script>
+        document.write('<script src="js/script.js?v=' + new Date().getTime() + '"><\/script>');
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+{
+  "senin": [
+    {
+      "waktu": "07.30 - 09.00",
+      "matkul": "Rangkaian Digital",
+      "dosen": "Pak Rais",
+      "ruang": "Ruang 4"
+    },
+    {
+      "waktu": "09.10 - 10.40",
+      "matkul": "Sistem Basis Data",
+      "dosen": "Bu Nadia",
+      "ruang": "Ruang 4"
+    }
+  ],
+  "selasa": [
+    {
+      "waktu": "14.40 - 16.10",
+      "matkul": "Sistem Operasi",
+      "dosen": "Pak Ihsanul",
+      "ruang": "Ruang 4"
+    },
+    {
+      "waktu": "16.20 - 17.50",
+      "matkul": "Organisasi & Arsitektur Komputer",
+      "dosen": "Pak Rasyidan",
+      "ruang": "Ruang 4"
+    }
+  ],
+  "rabu": [
+    {
+      "waktu": "07.30 - 09.00",
+      "matkul": "Pendidikan Agama Islam",
+      "dosen": "Bu Ajeng",
+      "ruang": "Ruang 3 Gabung dengan kelas 1C"
+    },
+    {
+      "waktu": "09.10 - 10.40",
+      "matkul": "Pengantar Teknologi Informasi",
+      "dosen": "Pa Zaenuddin",
+      "ruang": "Ruang 3 Gabung dengan kelas 1C"
+    },
+    {
+      "waktu": "14.40 - 16.10",
+      "matkul": "Pendidikan Pancasila",
+      "dosen": "Pak Juman",
+      "ruang": "Ruang 4"
+    }
+  ],
+  "kamis": [
+    {
+      "waktu": "07.30 - 09.00",
+      "matkul": "Logika Matematika",
+      "dosen": "Bu Retno",
+      "ruang": "Ruang 4"
+    },
+    {
+      "waktu": "09.10 - 10.40",
+      "matkul": "Algoritma dan Pemograman 1",
+      "dosen": "Pak Yusri",
+      "ruang": "Ruang 4"
+    }
+  ]
+}

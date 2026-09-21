@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Kebersamaan - TI Reg D BJM</title>
+    
+    <!-- Font Premium: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Memanggil CSS Utama (Untuk Navbar & Footer) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Memanggil CSS Khusus Halaman Album -->
+    <link rel="stylesheet" href="css/album.css?v=1.0">
+</head>
+<body>
+
+    <!-- BACKGROUND GLOW EFEK -->
+    <div class="bg-glow glow-purple"></div>
+    <div class="bg-glow glow-blue"></div>
+
+    <!-- NAVBAR PREMIUM -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                TI Reg <span>D BJM</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="album.html" class="active">Album Kelas</a></li>
+                <li><a href="jadwal.html">Jadwal</a></li>
+            </ul>
+            <a href="contact.html" class="btn-neon">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HEADER ALBUM -->
+    <section class="album-hero">
+        <div class="container text-center">
+            <div class="badge-neon mx-auto reveal-item">
+                <i class="ph-fill ph-images"></i> Galeri Kenangan
+            </div>
+            <h1 class="album-title reveal-item delay-1">Album Kebersamaan <br><span class="text-gradient">TI Reg D BJM</span></h1>
+            <p class="album-subtitle reveal-item delay-2">Kumpulan momen berharga, canda tawa, dan rekam jejak kebersamaan keluarga besar mahasiswa Teknik Informatika Reg D.</p>
+        </div>
+    </section>
+
+    <!-- GRID GALERI FOTO -->
+    <section class="album-gallery-section section-darker">
+        <div class="container">
+            
+            <!-- Kategori / Filter Tombol Album -->
+            <div class="album-tabs reveal-item">
+                <button class="filter-btn active" data-filter="all">Semua Momen</button>
+                <button class="filter-btn" data-filter="kampus">Kegiatan Kampus</button>
+                <button class="filter-btn" data-filter="luar">Aktivitas Luar Kelas</button>
+            </div>
+
+            <!-- Grid Kartu Foto -->
+            <div class="album-grid">
+                
+                <!-- Foto 1 -->
+                <div class="album-card reveal-item" data-category="kampus">
+                    <div class="album-img-wrapper">
+                        <img src="assets/images/bg-team.jpg" alt="Kumpul Angkatan" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop';">
+                        <div class="album-overlay">
+                            <i class="ph-bold ph-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <span class="album-tag">Kampus</span>
+                        <h3>Kumpul Angkatan 2026</h3>
+                        <p>Momen hangat kebersamaan dan kekompakan seluruh mahasiswa TI Reg D di lingkungan kampus.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="album-card reveal-item delay-1" data-category="luar">
+                    <div class="album-img-wrapper">
+                        <img src="assets/images/bg-team.jpg" alt="Momen Solidaritas" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop';">
+                        <div class="album-overlay">
+                            <i class="ph-bold ph-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <span class="album-tag">Luar Kelas</span>
+                        <h3>Momen Solidaritas</h3>
+                        <p>Potret keseruan, canda tawa, dan eratnya solidaritas tanpa batas dari keluarga besar.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3 -->
+                <div class="album-card reveal-item delay-2" data-category="kampus">
+                    <div class="album-img-wrapper">
+                        <img src="assets/images/bg-team.jpg" alt="Diskusi Kelompok" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop';">
+                        <div class="album-overlay">
+                            <i class="ph-bold ph-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <span class="album-tag">Kampus</span>
+                        <h3>Diskusi & Kerja Kelompok</h3>
+                        <p>Saling bahu-membahu menyelesaikan tugas dan project kolaborasi teknologi bersama tim.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 4 -->
+                <div class="album-card reveal-item" data-category="luar">
+                    <div class="album-img-wrapper">
+                        <img src="assets/images/bg-team.jpg" alt="Keluarga TI Reg D" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop';">
+                        <div class="album-overlay">
+                            <i class="ph-bold ph-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <span class="album-tag">Luar Kelas</span>
+                        <h3>Keluarga TI Reg D</h3>
+                        <p>Bukan sekadar teman sekelas, melainkan wadah keluarga kedua yang saling mendukung.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 5 -->
+                <div class="album-card reveal-item delay-1" data-category="kampus">
+                    <div class="album-img-wrapper">
+                        <img src="assets/images/bg-team.jpg" alt="Praktikum Bersama" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop';">
+                        <div class="album-overlay">
+                            <i class="ph-bold ph-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <span class="album-tag">Kampus</span>
+                        <h3>Praktikum Laboratorium</h3>
+                        <p>Suasana fokus bereksperimen dan belajar teknologi jaringan serta pemrograman.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 6 -->
+                <div class="album-card reveal-item delay-2" data-category="luar">
+                    <div class="album-img-wrapper">
+                        <img src="assets/images/bg-team.jpg" alt="Santai Bersama" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop';">
+                        <div class="album-overlay">
+                            <i class="ph-bold ph-magnifying-glass-plus"></i>
+                        </div>
+                    </div>
+                    <div class="album-info">
+                        <span class="album-tag">Luar Kelas</span>
+                        <h3>Waktu Santai Bersama</h3>
+                        <p>Melepaskan penat setelah penat kuliah dengan ngobrol santai dan berbagi cerita.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL POPUP GAMBAR (LIGHTBOX) -->
+    <div id="imageModal" class="modal-lightbox">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg" alt="Zoom Foto">
+        <div id="modalCaption"></div>
+    </div>
+
+    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
+    <div class="mobile-bottom-nav">
+        <!-- Beranda -->
+        <a href="home.html" class="nav-item">
+            <i class="ph-bold ph-house"></i>
+            <span>Beranda</span>
+        </a>
+        <!-- Album (Aktif di halaman ini) -->
+        <a href="album.html" class="nav-item active">
+            <i class="ph-bold ph-squares-four"></i>
+            <span>Album</span>
+        </a>
+        <!-- Jadwal -->
+        <a href="jadwal.html" class="nav-item">
+            <i class="ph-bold ph-calendar"></i>
+            <span>Jadwal</span>
+        </a>
+        <!-- Profil -->
+        <a href="profil.html" class="nav-item">
+            <i class="ph-bold ph-user"></i>
+            <span>Profil</span>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="f-left">
+                <h2>TI Reg D <span>BJM</span></h2>
+                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+            </div>
+            <div class="f-right">
+                <p>&copy; 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Memanggil JS Khusus Halaman Album -->
+    <script src="js/album.js"></script>
+</body>
+</html>

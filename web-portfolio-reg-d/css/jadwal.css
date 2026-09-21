@@ -1,0 +1,324 @@
+/* =========================================
+   1. HEADER JADWAL (HERO)
+========================================= */
+.jadwal-hero {
+    padding: 120px 0 60px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.jadwal-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--text-white);
+    letter-spacing: -1px;
+}
+
+.jadwal-subtitle {
+    font-size: 18px;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   2. NAVIGASI HARI (TABS)
+========================================= */
+.jadwal-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.day-btn {
+    background: transparent;
+    color: var(--text-gray);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.day-btn.active, .day-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+/* =========================================
+   3. KARTU JADWAL MATKUL
+========================================= */
+.jadwal-content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    min-height: 300px;
+}
+
+.jadwal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: opacity 0.3s ease;
+}
+
+.matkul-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-left: 4px solid var(--primary);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.matkul-card:hover {
+    transform: translateX(10px);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.mc-time {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 150px;
+}
+
+.mc-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.mc-details {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.mc-details span {
+    font-size: 14px;
+    color: var(--text-gray);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.mc-details span i {
+    color: var(--primary);
+    font-size: 16px;
+}
+
+.jadwal-kosong {
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px dashed rgba(255,255,255,0.1);
+    border-radius: 16px;
+}
+
+.jadwal-kosong i {
+    font-size: 48px;
+    color: var(--text-gray);
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.jadwal-kosong h3 {
+    font-size: 20px;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.jadwal-kosong p {
+    color: var(--text-gray);
+    font-size: 15px;
+}
+
+/* =========================================
+   4. INFO TAMBAHAN CARD
+========================================= */
+.info-card {
+    background: rgba(14, 165, 233, 0.05);
+    border: 1px solid rgba(14, 165, 233, 0.2);
+    border-radius: 16px;
+    padding: 24px 32px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-icon {
+    font-size: 32px;
+    color: var(--secondary);
+    margin-top: 4px;
+}
+
+.info-text h4 {
+    font-size: 18px;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.info-text p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+/* =========================================
+   5. ANIMASI MUNCUL (REVEAL)
+========================================= */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* =========================================
+   6. RESPONSIVE MOBILE
+========================================= */
+@media (max-width: 768px) {
+    .jadwal-title { font-size: 36px; }
+    
+    .matkul-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 20px;
+    }
+    
+    .matkul-card:hover {
+        transform: translateY(-5px); /* Geser ke atas, bukan ke kanan kalau di HP */
+    }
+
+    .mc-details {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .info-card {
+        flex-direction: column;
+    }
+    
+    .matkul-card, .info-card {
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        background: rgba(15, 23, 42, 0.85) !important; 
+    }
+}
+
+/* =========================================
+   11. MOBILE BOTTOM NAVIGATION (FLOATING PILL)
+========================================= */
+/* Sembunyikan di Desktop secara default */
+.mobile-bottom-nav {
+    display: none; 
+}
+
+@media (max-width: 768px) {
+    /* Munculkan Navbar Bawah di HP */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        background: rgba(15, 23, 42, 0.85); /* Warna Dark Blue Glassmorphism */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        padding: 8px 12px;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Styling Default Ikon (Belum Aktif) */
+    .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-gray);
+        text-decoration: none;
+        padding: 12px;
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    .nav-item i {
+        font-size: 24px;
+        transition: 0.3s ease;
+    }
+
+    /* Teks disembunyikan pakai max-width agar animasinya mulus */
+    .nav-item span {
+        max-width: 0;
+        opacity: 0;
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* =========================================
+       STATE AKTIF (MENU YANG SEDANG DIBUKA)
+       Mirip seperti gambar referensi
+    ========================================= */
+    .nav-item.active {
+        background: var(--primary); /* Tombol biru aktif */
+        color: var(--text-white);
+        padding: 12px 24px; /* Memanjang untuk memberi ruang teks */
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .nav-item.active span {
+        max-width: 100px; /* Lebar dibuka agar teks muncul */
+        opacity: 1;
+        margin-left: 8px; /* Jarak antara ikon dan teks */
+    }
+
+    /* Opsional: Sembunyikan Footer di HP agar tidak tertutup Navbar Floating */
+    footer {
+        padding-bottom: 100px; 
+    }
+}

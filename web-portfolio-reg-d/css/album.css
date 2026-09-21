@@ -1,0 +1,338 @@
+/* =========================================
+   1. HEADER ALBUM (HERO)
+========================================= */
+.album-hero {
+    padding: 120px 0 60px 0;
+    position: relative;
+    z-index: 10;
+}
+
+.album-title {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: var(--text-white);
+    letter-spacing: -1px;
+}
+
+.album-subtitle {
+    font-size: 18px;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+/* =========================================
+   2. FILTER TABS
+========================================= */
+.album-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    color: var(--text-gray);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+}
+
+/* =========================================
+   3. ALBUM GRID & CARD
+========================================= */
+.album-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.album-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.album-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(59, 130, 246, 0.5);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+.album-img-wrapper {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+    cursor: pointer;
+    background: rgba(0,0,0,0.4);
+}
+
+.album-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s ease;
+}
+
+.album-card:hover .album-img-wrapper img {
+    transform: scale(1.08);
+}
+
+.album-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(2, 6, 23, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.album-overlay i {
+    font-size: 36px;
+    color: var(--text-white);
+    transform: scale(0.8);
+    transition: 0.3s ease;
+}
+
+.album-img-wrapper:hover .album-overlay {
+    opacity: 1;
+}
+
+.album-img-wrapper:hover .album-overlay i {
+    transform: scale(1);
+}
+
+.album-info {
+    padding: 24px;
+}
+
+.album-tag {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.15);
+    color: #93c5fd;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+}
+
+.album-info h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.album-info p {
+    font-size: 13px;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* =========================================
+   4. LIGHTBOX MODAL (ZOOM FOTO SAAT DIKLIK)
+========================================= */
+.modal-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(2, 6, 23, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.modal-content {
+    max-width: 85%;
+    max-height: 80vh;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 0 0 50px rgba(59, 130, 246, 0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+#modalCaption {
+    color: var(--text-white);
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: var(--text-white);
+    font-size: 40px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-close:hover {
+    color: var(--primary);
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* =========================================
+   5. EFEK ANIMASI MUNCUL (REVEAL)
+========================================= */
+.reveal-item {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-item.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+
+/* =========================================
+   6. RESPONSIVE MOBILE (ANTI-LAG)
+========================================= */
+@media (max-width: 992px) {
+    .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .album-title { font-size: 36px; }
+    .album-grid { grid-template-columns: 1fr; }
+    .album-card {
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        background: rgba(15, 23, 42, 0.85) !important; 
+    }
+}
+
+/* =========================================
+   11. MOBILE BOTTOM NAVIGATION (FLOATING PILL)
+========================================= */
+/* Sembunyikan di Desktop secara default */
+.mobile-bottom-nav {
+    display: none; 
+}
+
+@media (max-width: 768px) {
+    /* Munculkan Navbar Bawah di HP */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        background: rgba(15, 23, 42, 0.85); /* Warna Dark Blue Glassmorphism */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        padding: 8px 12px;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Styling Default Ikon (Belum Aktif) */
+    .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-gray);
+        text-decoration: none;
+        padding: 12px;
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    .nav-item i {
+        font-size: 24px;
+        transition: 0.3s ease;
+    }
+
+    /* Teks disembunyikan pakai max-width agar animasinya mulus */
+    .nav-item span {
+        max-width: 0;
+        opacity: 0;
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* =========================================
+       STATE AKTIF (MENU YANG SEDANG DIBUKA)
+       Mirip seperti gambar referensi
+    ========================================= */
+    .nav-item.active {
+        background: var(--primary); /* Tombol biru aktif */
+        color: var(--text-white);
+        padding: 12px 24px; /* Memanjang untuk memberi ruang teks */
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .nav-item.active span {
+        max-width: 100px; /* Lebar dibuka agar teks muncul */
+        opacity: 1;
+        margin-left: 8px; /* Jarak antara ikon dan teks */
+    }
+
+    /* Opsional: Sembunyikan Footer di HP agar tidak tertutup Navbar Floating */
+    footer {
+        padding-bottom: 100px; 
+    }
+}

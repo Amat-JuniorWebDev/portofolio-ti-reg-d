@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Kelas - TI Reg D BJM</title>
+    
+    <!-- Font Premium: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Memanggil CSS Utama (Untuk Navbar & Footer) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Memanggil CSS Khusus Halaman Profil -->
+    <link rel="stylesheet" href="css/profil.css?v=1.0">
+</head>
+<body>
+
+    <!-- BACKGROUND GLOW EFEK -->
+    <div class="bg-glow glow-purple"></div>
+    <div class="bg-glow glow-blue"></div>
+
+    <!-- NAVBAR PREMIUM -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                TI Reg <span>D BJM</span>
+            </div>
+            <ul class="nav-links">
+                <!-- Perhatikan: Class 'active' sekarang pindah ke menu Profil -->
+                <li><a href="home.html">Beranda</a></li>
+                <li><a href="profil.html" class="active">Profil</a></li>
+                <li><a href="album.html">Album Kelas</a></li>
+                <li><a href="jadwal.html">Jadwal</a></li>
+            </ul>
+            <a href="contact.html" class="btn-neon">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HEADER PROFIL (Hero Khusus Profil) -->
+    <section class="profil-hero">
+        <div class="container text-center">
+            <div class="badge-neon mx-auto reveal-item">
+                <i class="ph-fill ph-identification-card"></i> Tentang Kami
+            </div>
+            <h1 class="profil-title reveal-item delay-1">Mengenal Lebih Dekat <br><span class="text-gradient">TI Reg D BJM</span></h1>
+            <p class="profil-subtitle reveal-item delay-2">Kami adalah angkatan 2026 Teknik Informatika & Jaringan yang berfokus pada kolaborasi, inovasi digital, dan pemecahan masalah teknologi di Kalimantan Selatan.</p>
+        </div>
+    </section>
+
+    <!-- VISI & MISI SECTION -->
+    <section class="visi-misi-section section-darker">
+        <div class="container">
+            <div class="vm-grid">
+                <!-- Kartu Visi -->
+                <div class="glass-card vm-card reveal-item">
+                    <div class="vm-icon"><i class="ph-fill ph-eye"></i></div>
+                    <h3>Visi Kelas</h3>
+                    <p>Menjadi pionir talenta digital muda yang inovatif, berdaya saing tinggi dalam industri teknologi informasi, dan mampu menciptakan solusi cerdas yang bermanfaat bagi masyarakat luas.</p>
+                </div>
+                
+                <!-- Kartu Misi -->
+                <div class="glass-card vm-card reveal-item delay-1">
+                    <div class="vm-icon"><i class="ph-fill ph-target"></i></div>
+                    <h3>Misi Kelas</h3>
+                    <ul class="misi-list">
+                        <li><i class="ph-bold ph-check-circle"></i> Membangun ekosistem belajar yang kolaboratif.</li>
+                        <li><i class="ph-bold ph-check-circle"></i> Menguasai fondasi web development dan jaringan komputer.</li>
+                        <li><i class="ph-bold ph-check-circle"></i> Menciptakan portofolio nyata yang siap bersaing di dunia kerja.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEJARAH / CERITA KAMI -->
+    <section class="cerita-section section-dark">
+        <div class="container cerita-layout">
+            <div class="cerita-teks reveal-item">
+                <h2 class="section-title">Awal Mula <span class="text-gradient">Perjalanan</span></h2>
+                <p>Terbentuk pada tahun 2026, kelas TI Reg D Banjarmasin mengumpulkan berbagai individu dengan latar belakang berbeda, namun memiliki satu tujuan yang sama: menguasai teknologi.</p>
+                <p>Dari tugas-tugas awal pemrograman dasar hingga merakit topologi jaringan kompleks, kami terus mendukung satu sama lain. Ruang kelas kami bukan hanya tempat mendengarkan teori, melainkan laboratorium ide di mana setiap error (bug) adalah pelajaran, dan setiap keberhasilan adalah perayaan bersama.</p>
+            </div>
+            <div class="cerita-visual reveal-item delay-1">
+                <!-- Anda bisa mengganti gambar ini dengan foto nyata atau ilustrasi lain -->
+                <div class="image-frame">
+                    <img src="assets/images/bg-team.jpg" alt="Foto Perjalanan Kelas" onerror="this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop';">
+                    <div class="frame-border"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
+    <div class="mobile-bottom-nav">
+        <!-- Beranda -->
+        <a href="home.html" class="nav-item">
+            <i class="ph-bold ph-house"></i>
+            <span>Beranda</span>
+        </a>
+        <!-- Album -->
+        <a href="album.html" class="nav-item">
+            <i class="ph-bold ph-squares-four"></i>
+            <span>Album</span>
+        </a>
+        <!-- Jadwal -->
+        <a href="jadwal.html" class="nav-item">
+            <i class="ph-bold ph-calendar"></i>
+            <span>Jadwal</span>
+        </a>
+        <!-- Profil (Aktif di halaman ini) -->
+        <a href="profil.html" class="nav-item active">
+            <i class="ph-bold ph-user"></i>
+            <span>Profil</span>
+        </a>
+    </div>
+
+    <!-- FOOTER (Sama dengan home) -->
+    <footer>
+        <div class="container footer-content">
+            <div class="f-left">
+                <h2>TI Reg D <span>BJM</span></h2>
+                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+            </div>
+            <div class="f-right">
+                <p>&copy; 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Memanggil JS Khusus Halaman Profil -->
+    <script src="js/profil.js"></script>
+</body>
+</html>

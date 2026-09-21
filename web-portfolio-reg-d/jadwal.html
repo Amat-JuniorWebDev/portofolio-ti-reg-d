@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Perkuliahan - TI Reg D BJM</title>
+    
+    <!-- Font Premium: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Memanggil CSS Utama (Untuk Navbar, Footer, Background & Tema Biru) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Memanggil CSS Khusus Halaman Jadwal -->
+    <link rel="stylesheet" href="css/jadwal.css?v=1.0">
+</head>
+<body>
+
+    <!-- BACKGROUND GLOW EFEK BIRU -->
+    <div class="bg-glow glow-purple"></div>
+    <div class="bg-glow glow-blue"></div>
+
+    <!-- NAVBAR PREMIUM -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                TI Reg <span>D BJM</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="album.html">Album Kelas</a></li>
+                <li><a href="jadwal.html" class="active">Jadwal</a></li>
+            </ul>
+            <a href="contact.html" class="btn-neon">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HEADER JADWAL -->
+    <section class="jadwal-hero">
+        <div class="container text-center">
+            <div class="badge-neon mx-auto reveal-item">
+                <i class="ph-fill ph-calendar-check"></i> Jadwal Aktif 2026
+            </div>
+            <h1 class="jadwal-title reveal-item delay-1">Jadwal Perkuliahan <br><span class="text-gradient">TI Reg D BJM</span></h1>
+            <p class="jadwal-subtitle reveal-item delay-2">Informasi lengkap jadwal mata kuliah, ruang kelas, dan dosen pengajar untuk semester ini.</p>
+        </div>
+    </section>
+
+    <!-- KONTEN JADWAL -->
+    <section class="jadwal-section section-darker">
+        <div class="container">
+            
+            <!-- Tombol Navigasi Hari (Filter) -->
+            <div class="jadwal-tabs reveal-item">
+                <button class="day-btn active" data-hari="senin">Senin</button>
+                <button class="day-btn" data-hari="selasa">Selasa</button>
+                <button class="day-btn" data-hari="rabu">Rabu</button>
+                <button class="day-btn" data-hari="kamis">Kamis</button>
+                <button class="day-btn" data-hari="jumat">Jumat</button>
+            </div>
+
+            <!-- Area Tampilan Jadwal (Berubah Sesuai Tab) -->
+            <div class="jadwal-content-wrapper reveal-item delay-1">
+                <div id="jadwal-display" class="jadwal-list">
+                    <!-- Konten awal (Senin) di-load langsung di HTML agar rapi -->
+                    <div class="matkul-card">
+                        <div class="mc-time">
+                            <i class="ph-bold ph-clock"></i> 08:00 - 10:30
+                        </div>
+                        <div class="mc-info">
+                            <h3>Pemrograman Web Lanjut</h3>
+                            <div class="mc-details">
+                                <span><i class="ph-fill ph-chalkboard-teacher"></i> Bpk. Hendra, M.Kom</span>
+                                <span><i class="ph-fill ph-map-pin"></i> Lab Komputer 1</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="matkul-card">
+                        <div class="mc-time">
+                            <i class="ph-bold ph-clock"></i> 13:00 - 15:30
+                        </div>
+                        <div class="mc-info">
+                            <h3>Jaringan Komputer Dasar</h3>
+                            <div class="mc-details">
+                                <span><i class="ph-fill ph-chalkboard-teacher"></i> Ibu Ratna, S.T</span>
+                                <span><i class="ph-fill ph-map-pin"></i> Ruang Teori 4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- INFO TAMBAHAN -->
+    <section class="info-section section-dark">
+        <div class="container">
+            <div class="info-card reveal-item">
+                <div class="info-icon"><i class="ph-fill ph-warning-circle"></i></div>
+                <div class="info-text">
+                    <h4>Pemberitahuan Penting</h4>
+                    <p>Jadwal dapat berubah sewaktu-waktu sesuai dengan kebijakan dosen pengajar atau hari libur nasional. Harap selalu memeriksa pengumuman di grup WhatsApp kelas untuk informasi perubahan jadwal darurat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
+    <div class="mobile-bottom-nav">
+        <!-- Beranda -->
+        <a href="home.html" class="nav-item">
+            <i class="ph-bold ph-house"></i>
+            <span>Beranda</span>
+        </a>
+        <!-- Album -->
+        <a href="album.html" class="nav-item">
+            <i class="ph-bold ph-squares-four"></i>
+            <span>Album</span>
+        </a>
+        <!-- Jadwal (Aktif di halaman ini) -->
+        <a href="jadwal.html" class="nav-item active">
+            <i class="ph-bold ph-calendar"></i>
+            <span>Jadwal</span>
+        </a>
+        <!-- Profil -->
+        <a href="profil.html" class="nav-item">
+            <i class="ph-bold ph-user"></i>
+            <span>Profil</span>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="f-left">
+                <h2>TI Reg D <span>BJM</span></h2>
+                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+            </div>
+            <div class="f-right">
+                <p>&copy; 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Memanggil JS Khusus Halaman Jadwal -->
+    <script src="js/jadwal.js"></script>
+</body>
+</html>

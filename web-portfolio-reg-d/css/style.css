@@ -1,0 +1,466 @@
+/* =========================================
+   1. VARIABLES & RESET (DARK BLUE THEME)
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bg-main: #020617;        /* Latar belakang biru sangat pekat (Slate 950) */
+    --bg-alt: #0f172a;         /* Latar selang-seling biru gelap (Slate 900) */
+    --primary: #3b82f6;        /* Biru Utama (Blue 500) */
+    --primary-hover: #2563eb;  /* Biru Hover (Blue 600) */
+    --secondary: #0ea5e9;      /* Biru Muda / Cyan untuk gradasi (Sky 500) */
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --text-white: #ffffff;
+    --text-gray: #94a3b8;
+    --text-dark: #e2e8f0;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Plus Jakarta Sans', sans-serif !important; 
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--bg-main); color: var(--text-dark); line-height: 1.6; overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 10; }
+a { text-decoration: none; }
+
+.mt-20 { margin-top: 20px; }
+.mt-60 { margin-top: 60px; }
+.text-center { text-align: center; }
+
+/* Global Typography */
+.section-dark { background: var(--bg-main); padding: 100px 0; }
+.section-darker { background: var(--bg-alt); padding: 100px 0; }
+.section-title { font-size: 36px; font-weight: 800; color: var(--text-white); margin-bottom: 12px; letter-spacing: -1px; }
+.section-subtitle { font-size: 15px; color: var(--text-gray); margin-bottom: 50px; font-weight: 500; }
+.text-gradient { 
+    background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    color: transparent; 
+}
+
+/* Background Glow Effect - Dioptimalkan Anti-Lag Desktop */
+/* Background Glow Effect - SUPER RINGAN (ANTI-LAG) */
+.bg-glow { 
+    position: fixed; 
+    z-index: 1; 
+    pointer-events: none; 
+    /* Kita HAPUS filter: blur(120px) di sini karena ini biang kerok lag */
+}
+
+/* Menggunakan Radial Gradient sebagai pengganti Blur (Tampilan sama, beban 0%) */
+.glow-purple { 
+    top: -20%; left: -10%; 
+    width: 60vw; height: 60vw; 
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); 
+}
+.glow-blue { 
+    bottom: -20%; right: -10%; 
+    width: 50vw; height: 50vw; 
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%); 
+}
+
+/* =========================================
+   2. NAVBAR
+========================================= */
+.navbar { 
+    background: rgba(2, 6, 23, 0.7); 
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 100; 
+    border-bottom: 1px solid rgba(255,255,255,0.05); 
+    animation: fadeSlideDown 0.8s ease both; 
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { color: var(--text-white); font-size: 20px; font-weight: 800; letter-spacing: 0.5px; }
+.logo span { color: var(--primary); }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a { color: var(--text-gray); font-size: 14px; font-weight: 600; transition: 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--text-white); text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+
+.btn-neon { 
+    background: transparent; 
+    color: var(--text-white); 
+    padding: 10px 24px; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    font-size: 14px; 
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3) inset, 0 0 15px rgba(59, 130, 246, 0.3);
+    transition: 0.3s; 
+}
+.btn-neon:hover { background: var(--primary); box-shadow: 0 0 25px rgba(59, 130, 246, 0.6); }
+
+/* =========================================
+   3. HERO SECTION
+========================================= */
+.hero-section { padding: 100px 0 120px 0; min-height: 90vh; display: flex; align-items: center; }
+.hero-content { display: flex; align-items: center; gap: 60px; justify-content: space-between; }
+.hero-text { flex: 1.2; }
+
+/* Animasi Bertingkat (Staggered) pada Teks Hero */
+.badge-neon { 
+    display: inline-flex; align-items: center; gap: 8px; 
+    background: rgba(59, 130, 246, 0.1); 
+    border: 1px solid rgba(59, 130, 246, 0.3); 
+    color: #93c5fd; padding: 6px 16px; border-radius: 50px; 
+    font-size: 13px; font-weight: 600; margin-bottom: 24px; 
+    animation: fadeSlideUp 0.8s ease both 0.2s;
+}
+
+.hero-text h1 { font-size: 56px; line-height: 1.1; font-weight: 800; margin-bottom: 8px; letter-spacing: -1.5px; color: var(--text-white); animation: fadeSlideUp 0.8s ease both 0.4s; }
+
+/* EFEK KETIK PADA SUBTITLE */
+.hero-text .subtitle { 
+    font-size: 24px; 
+    font-weight: 600; 
+    color: var(--text-dark); 
+    margin-bottom: 24px; 
+    display: inline-block;
+    border-right: 3px solid var(--primary); 
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hero-text .desc { font-size: 16px; color: var(--text-gray); margin-bottom: 30px; max-width: 90%; line-height: 1.7; animation: fadeSlideUp 0.8s ease both 0.8s; }
+
+.tech-tags { display: flex; gap: 12px; margin-bottom: 40px; flex-wrap: wrap; animation: fadeSlideUp 0.8s ease both 1s; }
+.tech-tags span { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-dark); transition: 0.3s; }
+.tech-tags span:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+
+/* TOMBOL CTA HERO YANG DIPERBAGUS */
+.hero-buttons { display: flex; align-items: center; gap: 20px; animation: fadeSlideUp 0.8s ease both 1.2s; }
+
+.btn-primary { 
+    display: inline-flex; align-items: center; gap: 10px; 
+    background: linear-gradient(135deg, var(--primary), var(--secondary)); 
+    color: var(--text-white); 
+    padding: 15px 32px; 
+    border-radius: 12px; 
+    font-weight: 700; 
+    font-size: 15px; 
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4); 
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.6s;
+}
+
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+.btn-primary:hover { 
+    transform: translateY(-4px); 
+    box-shadow: 0 18px 35px rgba(59, 130, 246, 0.6), 0 0 20px rgba(14, 165, 233, 0.4); 
+    filter: brightness(1.1);
+}
+
+.btn-outline { 
+    display: inline-flex; align-items: center; gap: 10px; 
+    background: rgba(255, 255, 255, 0.03); 
+    color: var(--text-white); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(59, 130, 246, 0.4); 
+    padding: 15px 32px; 
+    border-radius: 12px; 
+    font-weight: 600; 
+    font-size: 15px; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.btn-outline:hover { 
+    background: rgba(59, 130, 246, 0.15); 
+    border-color: var(--primary); 
+    color: var(--text-white);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(59, 130, 246, 0.3);
+}
+
+/* Visual Kanan (Animasi Lottie) */
+.hero-visual { flex: 0.8; display: flex; justify-content: center; align-items: center; }
+
+.lottie-hero {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 20px 30px rgba(59, 130, 246, 0.15));
+    animation: fadeInScale 1s ease both 0.6s;
+}
+
+/* =========================================
+   4. PROFIL KELAS (ABOUT US)
+========================================= */
+.profil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 40px; }
+.profil-text h3 { font-size: 32px; font-weight: 800; margin-bottom: 20px; line-height: 1.2; color: var(--text-white); }
+.profil-text p { font-size: 15px; color: var(--text-gray); margin-bottom: 20px; line-height: 1.8; }
+.profil-image-box { position: relative; }
+.img-glow { width: 100%; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 0 40px rgba(59, 130, 246, 0.2); display: block; }
+
+/* =========================================
+   5. TUGAS MATERI / ALBUM KELAS (SHOWCASE)
+========================================= */
+.showcase-tabs { display: flex; justify-content: center; gap: 16px; margin-bottom: 50px; }
+.showcase-tabs .tab-btn { background: transparent; color: var(--text-gray); border: 1px solid rgba(255,255,255,0.1); padding: 10px 24px; border-radius: 50px; font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+.showcase-tabs .tab-btn.active, .showcase-tabs .tab-btn:hover { background: rgba(59, 130, 246, 0.1); color: var(--primary); border-color: var(--primary); }
+
+.portfolio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.port-card { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; transition: 0.4s; }
+.port-card:hover { transform: translateY(-10px); border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+.port-image { background: rgba(0,0,0,0.3); height: 180px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.img-placeholder { font-size: 60px; color: rgba(255,255,255,0.1); }
+.port-content { padding: 24px; }
+.port-content h4 { font-size: 18px; font-weight: 700; color: var(--text-white); margin-bottom: 10px; }
+.port-content p { font-size: 13px; color: var(--text-gray); margin-bottom: 20px; line-height: 1.6; }
+.port-tags { display: flex; gap: 8px; margin-bottom: 24px; }
+.port-tags span { background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; color: #cbd5e1; }
+.port-actions { display: flex; justify-content: space-between; align-items: center; }
+.action-link { display: inline-flex; align-items: center; gap: 6px; color: var(--text-white); font-size: 13px; font-weight: 600; transition: 0.3s; }
+.action-link:hover { color: var(--primary); }
+.action-link.outline { background: rgba(255,255,255,0.05); padding: 6px 14px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); }
+
+/* =========================================
+   6. STRUKTUR ORGANISASI
+========================================= */
+.tree-container { display: flex; flex-direction: column; align-items: center; margin-top: 40px; }
+.glass-card { background: var(--glass-bg); backdrop-filter: blur(10px); border: 1px solid var(--glass-border); border-radius: 16px; padding: 20px 30px; text-align: center; }
+.structure-card { min-width: 220px; position: relative; z-index: 2; transition: 0.3s; }
+.structure-card:hover { border-color: var(--secondary); box-shadow: 0 0 20px rgba(14, 165, 233, 0.2); transform: translateY(-5px); }
+.structure-card .avatar { width: 50px; height: 50px; background: rgba(255,255,255,0.05); border-radius: 50%; margin: 0 auto 12px auto; display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--text-white); font-weight: 700;}
+.structure-card h5 { font-size: 16px; color: var(--text-white); margin-bottom: 4px; }
+.structure-card span { font-size: 12px; color: var(--primary); font-weight: 600; }
+
+.tree-node { position: relative; }
+.node-ketua { padding-bottom: 40px; }
+.node-ketua::after { content: ''; position: absolute; bottom: 0; left: 50%; width: 1px; height: 40px; background: rgba(255,255,255,0.1); transform: translateX(-50%); }
+.tree-branches { display: flex; gap: 40px; position: relative; padding-top: 40px; }
+.tree-branches::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: calc(100% - 220px); height: 1px; background: rgba(255,255,255,0.1); }
+.tree-branches .tree-node::before { content: ''; position: absolute; top: -40px; left: 50%; width: 1px; height: 40px; background: rgba(255,255,255,0.1); transform: translateX(-50%); z-index: -1; }
+
+.anggota-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.anggota-tag { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 50px; font-size: 13px; color: var(--text-gray); display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+.anggota-tag:hover { background: rgba(255,255,255,0.1); color: var(--text-white); }
+
+/* =========================================
+   7. JADWAL KULIAH
+========================================= */
+.dual-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.layout-left .section-title, .layout-right .section-title { font-size: 28px; text-align: left; margin-bottom: 30px; }
+
+.jadwal-glass-wrapper { background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; overflow: hidden; }
+.j-row { display: flex; padding: 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+.j-row:last-child { border-bottom: none; }
+.j-row:hover { background: rgba(255,255,255,0.03); }
+.j-time { width: 120px; font-size: 13px; font-weight: 700; color: var(--primary); display: flex; align-items: center; }
+.j-info strong { display: block; font-size: 16px; color: var(--text-white); margin-bottom: 4px; }
+.j-info span { font-size: 13px; color: var(--text-gray); }
+
+/* =========================================
+   8. FOOTER
+========================================= */
+footer { background: #020617; padding: 60px 0 30px 0; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-content { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 40px; margin-bottom: 30px;}
+.f-left h2 { font-size: 24px; color: var(--text-white); margin-bottom: 8px; }
+.f-left h2 span { color: var(--primary); }
+.f-left p { font-size: 14px; color: var(--text-gray); }
+.f-right p { font-size: 13px; color: var(--text-gray); }
+
+/* =========================================
+   9. RESPONSIVE MOBILE (DENGAN ANTI-LAG)
+========================================= */
+@media (max-width: 992px) {
+    .hero-content, .profil-grid, .dual-layout { flex-direction: column; grid-template-columns: 1fr; text-align: center; gap: 50px;}
+    .hero-text .desc { margin: 0 auto 30px auto; }
+    .tech-tags, .hero-buttons { justify-content: center; }
+    .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    /* Perbaikan Struktur Organisasi agar simetris di HP */
+    .tree-container { width: 100%; }
+    .tree-branches { 
+        flex-direction: column; 
+        padding-top: 16px; 
+        gap: 16px; 
+        margin-left: 0 !important; 
+        border-left: none !important; 
+        align-items: center;
+        width: 100%;
+    }
+    .tree-branches::before, .node-ketua::after, .tree-branches .tree-node::before { display: none !important; }
+    
+    /* Memberikan jarak aman di bawah agar tidak tertutup Navbar Bawah HP */
+    #struktur {
+        padding-bottom: 120px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Sembunyikan HANYA teks menu tengah, biarkan tombol Contact Us tetap muncul */
+    .nav-links { display: none; }
+    
+    /* Sesuaikan ukuran tombol Contact Us agar rapi di layar HP */
+    .btn-neon { 
+        display: inline-flex !important; 
+        align-items: center;
+        padding: 6px 14px; 
+        font-size: 12px; 
+        border-radius: 6px;
+    }
+
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .hero-text h1 { font-size: 40px; }
+    .hero-text .subtitle { font-size: 18px; white-space: normal; border: none; width: 100% !important; animation: none !important; } 
+    .j-row { flex-direction: column; gap: 8px; }
+    .footer-content { flex-direction: column; text-align: center; gap: 20px; }
+
+    .lottie-hero {
+        max-width: 300px;
+        margin-top: 30px;
+    }
+
+    .bg-glow { display: none !important; }
+
+    .navbar, .port-card, .glass-card, .jadwal-glass-wrapper {
+        backdrop-filter: blur(4px) !important;
+        -webkit-backdrop-filter: blur(4px) !important;
+        background: rgba(15, 23, 42, 0.85) !important; 
+    }
+}
+
+/* =========================================
+   10. KEYFRAMES ANIMASI & SCROLL REVEAL
+========================================= */
+@keyframes fadeSlideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInScale {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: var(--primary); }
+}
+
+/* Kelas Animasi Saat User Scroll ke Bawah */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   11. MOBILE BOTTOM NAVIGATION (FLOATING PILL)
+========================================= */
+/* Sembunyikan di Desktop secara default */
+.mobile-bottom-nav {
+    display: none; 
+}
+
+@media (max-width: 768px) {
+    /* Munculkan Navbar Bawah di HP */
+    .mobile-bottom-nav {
+        display: flex;
+        position: fixed;
+        bottom: 24px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        background: rgba(15, 23, 42, 0.85); /* Warna Dark Blue Glassmorphism */
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 50px;
+        padding: 8px 12px;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Styling Default Ikon (Belum Aktif) */
+    .nav-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text-gray);
+        text-decoration: none;
+        padding: 12px;
+        border-radius: 50px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    .nav-item i {
+        font-size: 24px;
+        transition: 0.3s ease;
+    }
+
+    /* Teks disembunyikan pakai max-width agar animasinya mulus */
+    .nav-item span {
+        max-width: 0;
+        opacity: 0;
+        font-size: 14px;
+        font-weight: 700;
+        white-space: nowrap;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* =========================================
+       STATE AKTIF (MENU YANG SEDANG DIBUKA)
+       Mirip seperti gambar referensi
+    ========================================= */
+    .nav-item.active {
+        background: var(--primary); /* Tombol biru aktif */
+        color: var(--text-white);
+        padding: 12px 24px; /* Memanjang untuk memberi ruang teks */
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .nav-item.active span {
+        max-width: 100px; /* Lebar dibuka agar teks muncul */
+        opacity: 1;
+        margin-left: 8px; /* Jarak antara ikon dan teks */
+    }
+
+    /* Opsional: Sembunyikan Footer di HP agar tidak tertutup Navbar Floating */
+    footer {
+        padding-bottom: 100px; 
+    }
+}

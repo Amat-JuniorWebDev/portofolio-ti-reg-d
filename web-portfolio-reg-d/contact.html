@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TI Reg D BJM</title>
+    
+    <!-- Font Premium: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Memanggil CSS Utama (Navbar, Footer, Tema Biru) -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Realtime Cache Busting CSS Khusus Contact -->
+    <script>
+        document.write('<link rel="stylesheet" href="css/contact.css?v=' + new Date().getTime() + '">');
+    </script>
+</head>
+<body>
+
+    <!-- BACKGROUND GLOW EFEK BIRU -->
+    <div class="bg-glow glow-purple"></div>
+    <div class="bg-glow glow-blue"></div>
+
+    <!-- NAVBAR PREMIUM -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                TI Reg <span>D BJM</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Beranda</a></li>
+                <li><a href="profil.html">Profil</a></li>
+                <li><a href="album.html">Album Kelas</a></li>
+                <li><a href="jadwal.html">Jadwal</a></li>
+            </ul>
+            <a href="contact.html" class="btn-neon active-btn">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- HEADER CONTACT -->
+    <section class="contact-hero">
+        <div class="container text-center">
+            <div class="badge-neon mx-auto reveal-item">
+                <i class="ph-fill ph-chats-teardrop"></i> Hubungi Kami
+            </div>
+            <h1 class="contact-title reveal-item delay-1">Pusat Bantuan & <br><span class="text-gradient">Informasi Kelas</span></h1>
+            <p class="contact-subtitle reveal-item delay-2">Ada keperluan akademik, kolaborasi project, atau hal penting lainnya? Silakan hubungi Ketua Kelas kami melalui WhatsApp di bawah ini.</p>
+        </div>
+    </section>
+
+    <!-- KONTEN UTAMA KARTU KONTAK -->
+    <section class="contact-section section-darker">
+        <div class="container">
+            <div class="contact-card-wrapper reveal-item">
+                
+                <!-- Card Ketua Kelas (WhatsApp Direct) -->
+                <div class="wa-card">
+                    <div class="wa-avatar">
+                        <i class="ph-fill ph-user-circle-gear"></i>
+                    </div>
+                    <div class="wa-info">
+                        <span class="wa-badge">Ketua Kelas TI Reg D</span>
+                        <h3>Rahmat Ridha Amrullah</h3>
+                        <p class="wa-number"><i class="ph-bold ph-phone"></i> +62 821-5231-6910</p>
+                        <p class="wa-desc">Respon cepat untuk urusan perizinan, informasi kuliah, dan koordinasi angkatan.</p>
+                    </div>
+                    <!-- Tombol Langsung ke WhatsApp -->
+                    <a href="https://wa.me/6282152316910?text=Halo%20Ketua%20Kelas%20TI%20Reg%20D%20BJM,%20saya%20ingin%20menanyakan..." target="_blank" class="btn-whatsapp">
+                        <i class="ph-fill ph-whatsapp-logo"></i> Hubungi via WhatsApp
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
+    <div class="mobile-bottom-nav">
+        <a href="home.html" class="nav-item">
+            <i class="ph-bold ph-house"></i>
+            <span>Beranda</span>
+        </a>
+        <a href="album.html" class="nav-item">
+            <i class="ph-bold ph-squares-four"></i>
+            <span>Album</span>
+        </a>
+        <a href="jadwal.html" class="nav-item">
+            <i class="ph-bold ph-calendar"></i>
+            <span>Jadwal</span>
+        </a>
+        <a href="profil.html" class="nav-item">
+            <i class="ph-bold ph-user"></i>
+            <span>Profil</span>
+        </a>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="f-left">
+                <h2>TI Reg D <span>BJM</span></h2>
+                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+            </div>
+            <div class="f-right">
+                <p>&copy; 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Realtime Cache Busting JS -->
+    <script>
+        document.write('<script src="js/contact.js?v=' + new Date().getTime() + '"><\/script>');
+    </script>
+</body>
+</html>
