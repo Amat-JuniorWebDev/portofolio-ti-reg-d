@@ -1,115 +1,156 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', () => {
 
-    const tabBtns = document.querySelectorAll('.day-btn');
-    const jadwalDisplay = document.getElementById('jadwal-display');
-    
-    // Variabel penampung data dari JSON
-    let dataJadwal = {}; 
-
-    // ==========================================
-    // 1. FETCH DATA DARI FILE JSON (DI FOLDER DATA)
-    // ==========================================
-    fetch('data/jadwal.json')
-        .then(response => response.json())
-        .then(data => {
-            dataJadwal = data;
-            
-            // Opsional: Langsung render jadwal hari Senin saat web pertama kali dibuka
-            // agar data dari JSON langsung menimpa data bawaan HTML
-            renderJadwal('senin');
-        })
-        .catch(error => console.error('Gagal memuat data/jadwal.json:', error));
-
-    // ==========================================
-    // 2. LOGIKA TAB KLIK HARI & TRIGGER RENDER
-    // ==========================================
-    if (tabBtns.length > 0 && jadwalDisplay) {
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // Hapus kelas aktif dari semua tombol
-                tabBtns.forEach(b => b.classList.remove('active'));
-                // Tambahkan kelas aktif ke tombol yang diklik
-                this.classList.add('active');
-
-                // Ambil data hari dari atribut HTML (misal: data-hari="senin")
-                const hari = this.getAttribute('data-hari');
-
-                // Berikan efek fade-out sebentar agar transisi perpindahan mulus
-                jadwalDisplay.style.opacity = 0;
-                
-                setTimeout(() => {
-                    // Panggil fungsi pembuat HTML
-                    renderJadwal(hari);
-                    // Berikan efek fade-in
-                    jadwalDisplay.style.opacity = 1;
-                }, 300);
-            });
-        });
-    }
-
-    // ==========================================
-    // 3. FUNGSI UNTUK MERAKIT HTML DARI JSON
-    // ==========================================
-    function renderJadwal(hari) {
-        // Mencegah error jika data JSON belum selesai dimuat saat user klik tab
-        if (!dataJadwal || Object.keys(dataJadwal).length === 0) {
-            jadwalDisplay.innerHTML = `<div class="jadwal-kosong"><p>Sedang memuat data...</p></div>`;
-            return;
-        }
-
-        const matkulHariIni = dataJadwal[hari];
-        let htmlContent = "";
-
-        // Cek jika datanya kosong (seperti Jumat/Sabtu/Minggu)
-        if (!matkulHariIni || matkulHariIni.length === 0) {
-            let icon = hari === 'jumat' ? 'ph-moon-stars' : 'ph-coffee';
-            let title = hari === 'jumat' ? 'Libur Akhir Pekan' : 'Tidak ada jadwal';
-            let desc = hari === 'jumat' ? 'Waktunya istirahat atau mengerjakan tugas project.' : 'Hari ini dikhususkan untuk praktik dan belajar mandiri.';
-            
-            htmlContent = `
-                <div class="jadwal-kosong">
-                    <i class="ph-fill ${icon}"></i>
-                    <h3>${title}</h3>
-                    <p>${desc}</p>
-                </div>
-            `;
-        } 
-        // Jika ada jadwal, looping datanya untuk membuat card matkul
-        else {
-            matkulHariIni.forEach(item => {
-                htmlContent += `
-                    <div class="matkul-card">
-                        <div class="mc-time"><i class="ph-bold ph-clock"></i> ${item.waktu}</div>
-                        <div class="mc-info">
-                            <h3>${item.matkul}</h3>
-                            <div class="mc-details">
-                                <span><i class="ph-fill ph-chalkboard-teacher"></i> ${item.dosen}</span>
-                                <span><i class="ph-fill ph-map-pin"></i> ${item.ruang}</span>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        // Tampilkan hasil rakitan HTML ke layar
-        jadwalDisplay.innerHTML = htmlContent;
-    }
-
-    // ==========================================
-    // 4. ANIMASI SCROLL REVEAL
-    // ==========================================
-    const revealElements = document.querySelectorAll('.reveal-item');
-    const observerOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-
-    const scrollObserver = new IntersectionObserver((entries, observer) => {
+    // =======================================================
+    // 1. EFEK SCROLL REVEAL (Animasi Muncul Perlahan)
+    // =======================================================
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    const revealObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                requestAnimationFrame(() => {
+                    entry.target.classList.add('active');
+                });
                 observer.unobserve(entry.target);
             }
         });
-    }, observerOptions);
+    }, {
+        rootMargin: "0px 0px -30px 0px", 
+        threshold: 0.05
+    });
+    revealElements.forEach(el => revealObserver.observe(el));
 
-    revealElements.forEach(el => scrollObserver.observe(el));
+
+    // =======================================================
+    // 2. FETCH DATA JSON & RENDER JADWAL
+    // =======================================================
+    let scheduleDatabase = {};
+    const wrapper = document.getElementById("schedule-wrapper");
+    const container = document.getElementById("cards-container");
+    const tabButtons = document.querySelectorAll(".tab-btn");
+
+    // Ambil data jadwal dari file data/jadwal.json
+    fetch('data/jadwal.json')
+        .then(response => {
+            if (!response.ok) throw new Error("Gagal mengambil jadwal.json");
+            return response.json();
+        })
+        .then(data => {
+            scheduleDatabase = data;
+            renderDaySchedule("senin"); // Muat hari Senin sebagai default awal
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            container.innerHTML = `
+                <div class="col-span-full p-8 text-center bg-surface-card rounded-xl border border-error/20">
+                    <span class="material-symbols-outlined text-[48px] text-error mb-2">error</span>
+                    <p class="text-body-lg text-on-surface-variant font-medium">Gagal memuat jadwal. Pastikan Anda menjalankan web via Live Server / Localhost.</p>
+                </div>
+            `;
+        });
+
+    // Fungsi Render Card Berdasarkan Hari
+    function renderDaySchedule(dayKey) {
+        // Efek Fade-out
+        wrapper.classList.remove("opacity-100");
+        wrapper.classList.add("opacity-0");
+
+        setTimeout(() => {
+            const scheduleList = scheduleDatabase[dayKey] || [];
+            container.innerHTML = "";
+
+            if (scheduleList.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full p-8 text-center bg-surface-card rounded-xl border border-border-subtle shadow-sm">
+                        <span class="material-symbols-outlined text-[48px] text-outline mb-2">event_busy</span>
+                        <p class="text-lg text-on-surface-variant font-medium font-headline-md">Tidak ada perkuliahan</p>
+                        <p class="text-sm text-outline mt-1">Gunakan waktu ini untuk mengerjakan tugas atau beristirahat.</p>
+                    </div>
+                `;
+            } else {
+                scheduleList.forEach((item, index) => {
+                    const animationDelay = index * 100;
+                    
+                    // PENYESUAIAN BUG UNDEFINED:
+                    // Jika data tidak ada di JSON, kita berikan nilai default agar desain tidak rusak!
+                    const ruangan = item.ruang || "Ruang 4"; 
+                    const dosen = item.dosen || "Dosen Belum Ditentukan";
+                    const matkul = item.matkul || "Mata Kuliah";
+                    const waktu = item.waktu || "00.00 - 00.00";
+                    
+                    // Ikon default elegan untuk menutupi bug "UNDEFINED"
+                    const icon = "menu_book"; 
+                    const badge = "Mata Kuliah Reguler"; 
+                    const badgeColor = "bg-tertiary-fixed/15 text-tertiary-fixed border-tertiary-fixed/30";
+
+                    const cardHTML = `
+                        <div class="group relative overflow-hidden rounded-xl bg-surface-card border border-border-subtle p-6 transition-all duration-300 hover:border-tertiary-fixed hover:shadow-lg flex flex-col justify-between" style="animation: fadeSlideUp 0.4s ease forwards ${animationDelay}ms; opacity: 0;">
+                            <!-- Top Accent Stripe -->
+                            <div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary-container group-hover:bg-tertiary-fixed transition-colors"></div>
+                            
+                            <div>
+                                <!-- Header: Waktu & Badge -->
+                                <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                    <div class="inline-flex items-center gap-1.5 text-secondary font-semibold font-headline-md text-sm">
+                                        <span class="material-symbols-outlined text-[18px]">schedule</span>
+                                        <span>${waktu} WITA</span>
+                                    </div>
+                                    <span class="text-[11px] px-3 py-1 rounded-full border ${badgeColor} font-semibold tracking-wide">
+                                        ${badge}
+                                    </span>
+                                </div>
+
+                                <!-- Mata Kuliah Title -->
+                                <div class="flex items-start gap-3 mb-6">
+                                    <div class="w-11 h-11 rounded-lg bg-surface-container flex-shrink-0 flex items-center justify-center text-primary-container mt-0.5">
+                                        <span class="material-symbols-outlined text-[22px]">${icon}</span>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-headline-md text-lg font-bold text-text-tinta group-hover:text-primary-container transition-colors leading-snug">
+                                            ${matkul}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Detail: Dosen & Ruangan -->
+                            <div class="pt-4 border-t border-border-subtle grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-on-surface-variant">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-[18px] text-outline">co_present</span>
+                                    <span class="truncate font-medium text-text-tinta">${dosen}</span>
+                                </div>
+                                <div class="flex items-center gap-2 sm:justify-end">
+                                    <span class="material-symbols-outlined text-[18px] text-outline">location_on</span>
+                                    <span class="font-medium text-text-tinta">${ruangan}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    container.insertAdjacentHTML("beforeend", cardHTML);
+                });
+            }
+
+            wrapper.classList.remove("opacity-0");
+            wrapper.classList.add("opacity-100");
+        }, 200); 
+    }
+
+    // =======================================================
+    // 3. TAB NAVIGATION HANDLER
+    // =======================================================
+    tabButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            tabButtons.forEach(b => {
+                b.className = "tab-btn px-6 py-3 rounded-lg font-headline-md text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-surface-card text-on-surface-variant hover:text-text-tinta border border-border-subtle hover:border-tertiary-fixed";
+                const icon = b.querySelector(".material-symbols-outlined");
+                if (icon) icon.className = "material-symbols-outlined text-[18px]";
+            });
+
+            btn.className = "tab-btn px-6 py-3 rounded-lg font-headline-md text-sm font-semibold transition-all duration-200 flex items-center gap-2 bg-primary-container text-surface-kertas shadow-sm ring-1 ring-primary-container";
+            const icon = btn.querySelector(".material-symbols-outlined");
+            if (icon) icon.className = "material-symbols-outlined text-[18px] text-secondary-container";
+
+            const day = btn.getAttribute("data-day");
+            renderDaySchedule(day);
+        });
+    });
 });

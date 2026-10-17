@@ -4,13 +4,19 @@
       "waktu": "07.30 - 09.00",
       "matkul": "Rangkaian Digital",
       "dosen": "Pak Rais",
-      "ruang": "Ruang 4"
+      "ruangan": "Ruang 4",
+      "badge": "Hardware & Logika",
+      "badgeColor": "bg-tertiary-fixed-dim/15 text-tertiary-fixed-dim border-tertiary-fixed-dim/30",
+      "icon": "memory"
     },
     {
       "waktu": "09.10 - 10.40",
       "matkul": "Sistem Basis Data",
       "dosen": "Bu Nadia",
-      "ruang": "Ruang 4"
+      "ruangan": "Ruang 4",
+      "badge": "Database & Query",
+      "badgeColor": "bg-secondary-container/15 text-on-secondary-container border-secondary-container/30",
+      "icon": "database"
     }
   ],
   "selasa": [
@@ -18,13 +24,19 @@
       "waktu": "14.40 - 16.10",
       "matkul": "Sistem Operasi",
       "dosen": "Pak Ihsanul",
-      "ruang": "Ruang 4"
+      "ruangan": "Ruang 4",
+      "badge": "Sistem & Core",
+      "badgeColor": "bg-tertiary-fixed-dim/15 text-tertiary-fixed-dim border-tertiary-fixed-dim/30",
+      "icon": "terminal"
     },
     {
       "waktu": "16.20 - 17.50",
       "matkul": "Organisasi & Arsitektur Komputer",
       "dosen": "Pak Rasyidan",
-      "ruang": "Ruang 4"
+      "ruangan": "Ruang 4",
+      "badge": "Infrastruktur IT",
+      "badgeColor": "bg-secondary-container/15 text-on-secondary-container border-secondary-container/30",
+      "icon": "dns"
     }
   ],
   "rabu": [
@@ -32,19 +44,28 @@
       "waktu": "07.30 - 09.00",
       "matkul": "Pendidikan Agama Islam",
       "dosen": "Bu Ajeng",
-      "ruang": "Ruang 3 Gabung dengan kelas 1C"
+      "ruangan": "Ruang 3 Gabung dengan kelas 1C",
+      "badge": "Mata Kuliah Umum",
+      "badgeColor": "bg-secondary-container/15 text-on-secondary-container border-secondary-container/30",
+      "icon": "menu_book"
     },
     {
       "waktu": "09.10 - 10.40",
       "matkul": "Pengantar Teknologi Informasi",
       "dosen": "Pa Zaenuddin",
-      "ruang": "Ruang 3 Gabung dengan kelas 1C"
+      "ruangan": "Ruang 3 Gabung dengan kelas 1C",
+      "badge": "Dasar Informatika",
+      "badgeColor": "bg-tertiary-fixed-dim/15 text-tertiary-fixed-dim border-tertiary-fixed-dim/30",
+      "icon": "computer"
     },
     {
       "waktu": "14.40 - 16.10",
       "matkul": "Pendidikan Pancasila",
       "dosen": "Pak Juman",
-      "ruang": "Ruang 4"
+      "ruangan": "Ruang 4",
+      "badge": "Mata Kuliah Umum",
+      "badgeColor": "bg-secondary-container/15 text-on-secondary-container border-secondary-container/30",
+      "icon": "assured_workload"
     }
   ],
   "kamis": [
@@ -52,13 +73,20 @@
       "waktu": "07.30 - 09.00",
       "matkul": "Logika Matematika",
       "dosen": "Bu Retno",
-      "ruang": "Ruang 4"
+      "ruangan": "Ruang 4",
+      "badge": "Sains & Analitik",
+      "badgeColor": "bg-tertiary-fixed-dim/15 text-tertiary-fixed-dim border-tertiary-fixed-dim/30",
+      "icon": "calculate"
     },
     {
       "waktu": "09.10 - 10.40",
       "matkul": "Algoritma dan Pemograman 1",
       "dosen": "Pak Yusri",
-      "ruang": "Ruang 4"
+      "ruangan": "Ruang 4",
+      "badge": "Pemrograman Dasar",
+      "badgeColor": "bg-secondary-container/15 text-on-secondary-container border-secondary-container/30",
+      "icon": "code"
     }
-  ]
+  ],
+  "jumat": []
 }

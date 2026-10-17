@@ -1,209 +1,631 @@
 <!DOCTYPE html>
-<html lang="id">
+<html class="scroll-smooth" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Album Kebersamaan - TI Reg D BJM</title>
-    
-    <!-- Font Premium: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <!-- Memanggil CSS Utama (Untuk Navbar & Footer) -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Memanggil CSS Khusus Halaman Album -->
-    <link rel="stylesheet" href="css/album.css?v=1.0">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Album Kelas - TI Reg D Banjarmasin</title>
+
+  <!-- Google Fonts: Sora & Inter & Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Realtime Cache Busting CSS -->
+  <script>
+    document.write('<link rel="stylesheet" href="css/home.css?v=' + new Date().getTime() + '">');
+  </script>
+
+  <!-- Tailwind CSS with configuration (Disamakan persis dengan profil.html) -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-highest": "#d6e6e0",
+            "surface-variant": "#d6e6e0",
+            "surface-bright": "#edfdf6",
+            "surface-container-low": "#e7f7f1",
+            "hutan-malam-dark": "#0A211C",
+            "on-primary-fixed-variant": "#2d4d46",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#25332f",
+            "outline": "#717976",
+            "surface-card": "#FFFFFF",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#2a1800",
+            "surface": "#edfdf6",
+            "primary": "#001b17",
+            "inverse-primary": "#abcec5",
+            "tertiary-fixed": "#73f8e2",
+            "on-surface": "#101e1a",
+            "background": "#edfdf6",
+            "on-primary-container": "#789a92",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#001b17",
+            "surface-kertas": "#F5F6F3",
+            "surface-container": "#e1f2eb",
+            "secondary": "#835400",
+            "on-error": "#ffffff",
+            "secondary-container": "#fdb244",
+            "outline-variant": "#c1c8c5",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#00201b",
+            "surface-container-high": "#dcece5",
+            "on-secondary-fixed-variant": "#633f00",
+            "primary-fixed": "#c7eae0",
+            "on-tertiary-container": "#00a593",
+            "secondary-fixed-dim": "#ffb956",
+            "on-background": "#101e1a",
+            "secondary-fixed": "#ffddb5",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#414846",
+            "on-tertiary-fixed-variant": "#005047",
+            "tertiary-fixed-dim": "#52dbc6",
+            "on-error-container": "#93000a",
+            "border-subtle": "#E2E5DE",
+            "surface-dim": "#cdded7",
+            "error": "#ba1a1a",
+            "primary-container": "#10312b",
+            "text-tinta": "#10231F",
+            "primary-fixed-dim": "#abcec5",
+            "tertiary-container": "#00322b",
+            "on-secondary-container": "#6e4600",
+            "inverse-on-surface": "#e4f4ee",
+            "on-tertiary-fixed": "#00201b",
+            "surface-tint": "#44655d"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "headline-lg": ["Sora", "sans-serif"],
+            "body-lg-mobile": ["Inter", "sans-serif"],
+            "headline-md": ["Sora", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Sora", "sans-serif"],
+            "headline-md-mobile": ["Sora", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "display-hero": ["Sora", "sans-serif"],
+            "display-hero-mobile": ["Sora", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .sinyal-glow {
+      box-shadow: 0 0 20px -3px rgba(115, 248, 226, 0.25);
+    }
+    .lampion-glow {
+      box-shadow: 0 0 24px 2px rgba(242, 169, 59, 0.22);
+    }
+  </style>
 </head>
-<body>
+<body class="bg-surface-kertas text-text-tinta font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-hutan-malam-dark">
 
-    <!-- BACKGROUND GLOW EFEK -->
-    <div class="bg-glow glow-purple"></div>
-    <div class="bg-glow glow-blue"></div>
+  <!-- BACKGROUND GLOW EFEK -->
+  <div class="bg-ambient-glow glow-cyan"></div>
+  <div class="bg-ambient-glow glow-amber"></div>
 
-    <!-- NAVBAR PREMIUM -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                TI Reg <span>D BJM</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="home.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="album.html" class="active">Album Kelas</a></li>
-                <li><a href="jadwal.html">Jadwal</a></li>
-            </ul>
-            <a href="contact.html" class="btn-neon">Contact Us</a>
+  <!-- 1. TOP NAVBAR -->
+  <header class="bg-hutan-malam-dark/90 backdrop-blur-md top-0 z-50 sticky border-b border-tertiary-fixed/15 shadow-sm">
+    <div class="w-full px-4 sm:px-6 lg:px-12 py-3.5 flex items-center justify-between mx-auto max-w-7xl">
+      <!-- Brand Logo Anchor -->
+      <a class="flex items-center gap-2.5 group" href="home.html">
+        <span class="relative flex h-3 w-3 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-fixed sinyal-glow"></span>
+        </span>
+        <div class="flex flex-col text-left">
+          <span class="font-headline-md text-[15px] sm:text-[17px] font-bold text-white tracking-tight group-hover:text-tertiary-fixed transition-colors duration-200">TI Reg D BJM</span>
+          <span class="text-[9px] uppercase font-mono tracking-wider text-on-primary/50 -mt-0.5">Teknik Informatika Banjarmasin</span>
         </div>
-    </nav>
+      </a>
+      
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 bg-white/5 border border-white/10 p-1.5 rounded-full backdrop-blur-sm">
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="home.html">Beranda</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="profil.html">Profil</a>
+        <!-- Album Aktif -->
+        <a class="px-4 py-1.5 text-tertiary-fixed font-semibold bg-tertiary-fixed/15 rounded-full font-label-md text-xs transition-all duration-200" href="album.html">Album Kelas</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="jadwal.html">Jadwal</a>
+      </nav>
 
-    <!-- HEADER ALBUM -->
-    <section class="album-hero">
-        <div class="container text-center">
-            <div class="badge-neon mx-auto reveal-item">
-                <i class="ph-fill ph-images"></i> Galeri Kenangan
-            </div>
-            <h1 class="album-title reveal-item delay-1">Album Kebersamaan <br><span class="text-gradient">TI Reg D BJM</span></h1>
-            <p class="album-subtitle reveal-item delay-2">Kumpulan momen berharga, canda tawa, dan rekam jejak kebersamaan keluarga besar mahasiswa Teknik Informatika Reg D.</p>
+     <!-- Trailing Action Buttons -->
+      <div class="flex items-center gap-2">
+        <a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-hutan-malam-dark font-label-md text-xs font-bold transition-all duration-200 active:scale-95 lampion-glow shadow-sm" href="contact.html">
+          <span class="material-symbols-outlined text-[15px]">mail</span>
+          <span>Contact Us</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+    <!-- HERO SECTION (Perbaikan Wave SVG & Layout) -->
+    <section class="relative bg-gradient-to-b from-primary-container via-[#0d2722] to-hutan-malam-dark text-on-primary pt-16 lg:pt-24 overflow-hidden">
+      <!-- Subtle ambient radial lighting -->
+      <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#73f8e2 1px, transparent 1px); background-size: 32px 32px;"></div>
+      
+      <!-- Tambahan pb-16 diletakkan di container teks, bukan di section utama agar ombak bisa menempel sempurna -->
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 pb-16">
+        <div class="scroll-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-tertiary-fixed/15 border border-tertiary-fixed/30 text-tertiary-fixed mb-6">
+          <span class="material-symbols-outlined text-[18px]">photo_camera</span>
+          <span class="font-label-md text-xs font-semibold tracking-wide">Galeri Kenangan</span>
         </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-8 text-left">
+            <h1 class="scroll-reveal delay-100 font-headline-lg text-[32px] sm:text-[40px] md:text-[56px] font-bold tracking-tight text-white mb-4">
+              Album Kebersamaan <br><span class="text-tertiary-fixed font-extrabold tracking-normal">TI Reg D BJM</span>
+            </h1>
+            <p class="scroll-reveal delay-200 font-body-lg text-[15px] sm:text-[16px] text-surface-container-highest max-w-2xl leading-relaxed">
+              Kumpulan momen berharga, canda tawa, dan rekam jejak kebersamaan keluarga besar mahasiswa Teknik Informatika Reg D.
+            </p>
+          </div>
+          
+          <!-- Statistics Badges Group -->
+          <div class="lg:col-span-4 flex flex-wrap lg:flex-col gap-3 justify-start lg:items-end">
+            <div class="scroll-reveal delay-300 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-left">
+              <span class="material-symbols-outlined text-tertiary-fixed text-[24px]">photo_library</span>
+              <div>
+                <p class="font-headline-md text-lg text-white font-bold leading-none">6+</p>
+                <p class="text-[11px] text-surface-container-highest">Galeri Momen</p>
+              </div>
+            </div>
+            <div class="scroll-reveal delay-400 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-left">
+              <span class="material-symbols-outlined text-secondary-container text-[24px]">groups</span>
+              <div>
+                <p class="font-headline-md text-lg text-white font-bold leading-none">30+</p>
+                <p class="text-[11px] text-surface-container-highest">Mahasiswa</p>
+              </div>
+            </div>
+            <div class="scroll-reveal delay-500 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-left">
+              <span class="material-symbols-outlined text-tertiary-fixed text-[24px]">school</span>
+              <div>
+                <p class="font-headline-md text-lg text-white font-bold leading-none">2026</p>
+                <p class="text-[11px] text-surface-container-highest">Angkatan MAB</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Organic Wave Transition (Kini seragam 100% dengan Home & Profil) -->
+      <div class="w-full overflow-hidden leading-none mt-10 sm:mt-16 -mb-[1px] relative z-20">
+        <svg class="relative block w-full h-10 sm:h-12 lg:h-24" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 120">
+          <path d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="#F5F6F3"></path>
+        </svg>
+      </div>
     </section>
 
-    <!-- GRID GALERI FOTO -->
-    <section class="album-gallery-section section-darker">
-        <div class="container">
-            
-            <!-- Kategori / Filter Tombol Album -->
-            <div class="album-tabs reveal-item">
-                <button class="filter-btn active" data-filter="all">Semua Momen</button>
-                <button class="filter-btn" data-filter="kampus">Kegiatan Kampus</button>
-                <button class="filter-btn" data-filter="luar">Aktivitas Luar Kelas</button>
-            </div>
-
-            <!-- Grid Kartu Foto -->
-            <div class="album-grid">
-                
-                <!-- Foto 1 -->
-                <div class="album-card reveal-item" data-category="kampus">
-                    <div class="album-img-wrapper">
-                        <img src="assets/images/bg-team.jpg" alt="Kumpul Angkatan" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop';">
-                        <div class="album-overlay">
-                            <i class="ph-bold ph-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <span class="album-tag">Kampus</span>
-                        <h3>Kumpul Angkatan 2026</h3>
-                        <p>Momen hangat kebersamaan dan kekompakan seluruh mahasiswa TI Reg D di lingkungan kampus.</p>
-                    </div>
-                </div>
-
-                <!-- Foto 2 -->
-                <div class="album-card reveal-item delay-1" data-category="luar">
-                    <div class="album-img-wrapper">
-                        <img src="assets/images/bg-team.jpg" alt="Momen Solidaritas" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800&auto=format&fit=crop';">
-                        <div class="album-overlay">
-                            <i class="ph-bold ph-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <span class="album-tag">Luar Kelas</span>
-                        <h3>Momen Solidaritas</h3>
-                        <p>Potret keseruan, canda tawa, dan eratnya solidaritas tanpa batas dari keluarga besar.</p>
-                    </div>
-                </div>
-
-                <!-- Foto 3 -->
-                <div class="album-card reveal-item delay-2" data-category="kampus">
-                    <div class="album-img-wrapper">
-                        <img src="assets/images/bg-team.jpg" alt="Diskusi Kelompok" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop';">
-                        <div class="album-overlay">
-                            <i class="ph-bold ph-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <span class="album-tag">Kampus</span>
-                        <h3>Diskusi & Kerja Kelompok</h3>
-                        <p>Saling bahu-membahu menyelesaikan tugas dan project kolaborasi teknologi bersama tim.</p>
-                    </div>
-                </div>
-
-                <!-- Foto 4 -->
-                <div class="album-card reveal-item" data-category="luar">
-                    <div class="album-img-wrapper">
-                        <img src="assets/images/bg-team.jpg" alt="Keluarga TI Reg D" onerror="this.src='https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop';">
-                        <div class="album-overlay">
-                            <i class="ph-bold ph-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <span class="album-tag">Luar Kelas</span>
-                        <h3>Keluarga TI Reg D</h3>
-                        <p>Bukan sekadar teman sekelas, melainkan wadah keluarga kedua yang saling mendukung.</p>
-                    </div>
-                </div>
-
-                <!-- Foto 5 -->
-                <div class="album-card reveal-item delay-1" data-category="kampus">
-                    <div class="album-img-wrapper">
-                        <img src="assets/images/bg-team.jpg" alt="Praktikum Bersama" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop';">
-                        <div class="album-overlay">
-                            <i class="ph-bold ph-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <span class="album-tag">Kampus</span>
-                        <h3>Praktikum Laboratorium</h3>
-                        <p>Suasana fokus bereksperimen dan belajar teknologi jaringan serta pemrograman.</p>
-                    </div>
-                </div>
-
-                <!-- Foto 6 -->
-                <div class="album-card reveal-item delay-2" data-category="luar">
-                    <div class="album-img-wrapper">
-                        <img src="assets/images/bg-team.jpg" alt="Santai Bersama" onerror="this.src='https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop';">
-                        <div class="album-overlay">
-                            <i class="ph-bold ph-magnifying-glass-plus"></i>
-                        </div>
-                    </div>
-                    <div class="album-info">
-                        <span class="album-tag">Luar Kelas</span>
-                        <h3>Waktu Santai Bersama</h3>
-                        <p>Melepaskan penat setelah penat kuliah dengan ngobrol santai dan berbagi cerita.</p>
-                    </div>
-                </div>
-
-            </div>
+    <!-- GALLERY WORKSPACE -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-12 py-16">
+      <div class="scroll-reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-4 border-b border-border-subtle">
+        <div>
+          <span class="text-xs text-secondary font-semibold uppercase tracking-wider">Koleksi Momen</span>
+          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-text-tinta font-bold mt-1">Dokumentasi Terkini Kelas D</h2>
         </div>
+        
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="filter-container">
+          <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold transition-all duration-150 bg-primary-container text-white shadow-sm" data-filter="all">Semua Momen</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all duration-150 bg-white text-on-surface-variant hover:text-primary border border-border-subtle" data-filter="kampus">Kegiatan Kampus</button>
+          <button class="filter-btn px-4 py-2 rounded-full text-xs font-medium transition-all duration-150 bg-white text-on-surface-variant hover:text-primary border border-border-subtle" data-filter="luar">Aktivitas Luar Kelas</button>
+        </div>
+      </div>
+
+      <!-- Interactive Gallery Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+        
+        <!-- Item 1: Kampus -->
+        <div class="gallery-item group bg-surface-card rounded-xl border border-border-subtle hover:border-tertiary-fixed-dim transition-all duration-300 flex flex-col overflow-hidden relative shadow-sm hover:shadow-lg" data-category="kampus">
+          <div class="h-[3px] w-full bg-secondary-container"></div>
+          <div class="relative overflow-hidden aspect-[16/10] bg-surface-container">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger" data-alt="Kegiatan Kumpul Angkatan Mahasiswa TI Reg D UNISKA MAB Banjarmasin di pelataran kampus." data-category-name="Kampus" data-date="September 2024" data-desc="Momen hangat kebersamaan dan kekompakan seluruh mahasiswa TI Reg D di lingkungan kampus UNISKA MAB Banjarmasin." data-title="Kumpul Angkatan 2026" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-fixed/20 backdrop-blur-md border border-tertiary-fixed/40 text-primary-container text-[11px] font-semibold">Kampus</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center gap-1.5 text-outline text-xs mb-2">
+                <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+                <span>September 2024</span>
+              </div>
+              <h3 class="font-headline-md text-lg font-bold text-text-tinta mb-2 line-clamp-2">Kumpul Angkatan 2026</h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">Momen hangat kebersamaan dan kekompakan seluruh mahasiswa TI Reg D di lingkungan kampus.</p>
+            </div>
+            <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-xs text-outline">Plaza Utama Kampus</span>
+              <button class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-secondary transition-colors detail-btn">
+                <span>Lihat Penuh</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 2: Luar Kelas -->
+        <div class="gallery-item group bg-surface-card rounded-xl border border-border-subtle hover:border-tertiary-fixed-dim transition-all duration-300 flex flex-col overflow-hidden relative shadow-sm hover:shadow-lg" data-category="luar">
+          <div class="h-[3px] w-full bg-secondary-container"></div>
+          <div class="relative overflow-hidden aspect-[16/10] bg-surface-container">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger" data-alt="Momen solidaritas dan kehangatan hangout mahasiswa di tepian sungai Martapura Banjarmasin." data-category-name="Luar Kelas" data-date="November 2024" data-desc="Potret keseruan, canda tawa, dan eratnya solidaritas tanpa batas dari keluarga besar TI Reg D." data-title="Momen Solidaritas" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1000&auto=format&fit=crop">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container/20 backdrop-blur-md border border-secondary-container/40 text-secondary text-[11px] font-semibold">Luar Kelas</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center gap-1.5 text-outline text-xs mb-2">
+                <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+                <span>November 2024</span>
+              </div>
+              <h3 class="font-headline-md text-lg font-bold text-text-tinta mb-2 line-clamp-2">Momen Solidaritas</h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">Potret keseruan, canda tawa, dan eratnya solidaritas tanpa batas dari keluarga besar.</p>
+            </div>
+            <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-xs text-outline">Banjarmasin Riverside</span>
+              <button class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-secondary transition-colors detail-btn">
+                <span>Lihat Penuh</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3: Kampus -->
+        <div class="gallery-item group bg-surface-card rounded-xl border border-border-subtle hover:border-tertiary-fixed-dim transition-all duration-300 flex flex-col overflow-hidden relative shadow-sm hover:shadow-lg" data-category="kampus">
+          <div class="h-[3px] w-full bg-secondary-container"></div>
+          <div class="relative overflow-hidden aspect-[16/10] bg-surface-container">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger" data-alt="Mahasiswa TI Reg D mempresentasikan rancangan software dan berdiskusi kelompok di auditorium kampus." data-category-name="Kampus" data-date="Januari 2025" data-desc="Saling bahu-membahu menyelesaikan tugas dan project kolaborasi teknologi bersama tim dalam sesi demo aplikasi." data-title="Diskusi & Kerja Kelompok" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-fixed/20 backdrop-blur-md border border-tertiary-fixed/40 text-primary-container text-[11px] font-semibold">Kampus</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center gap-1.5 text-outline text-xs mb-2">
+                <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+                <span>Januari 2025</span>
+              </div>
+              <h3 class="font-headline-md text-lg font-bold text-text-tinta mb-2 line-clamp-2">Diskusi & Kerja Kelompok</h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">Saling bahu-membahu menyelesaikan tugas dan project kolaborasi teknologi bersama tim.</p>
+            </div>
+            <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-xs text-outline">Auditorium Kampus</span>
+              <button class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-secondary transition-colors detail-btn">
+                <span>Lihat Penuh</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 4: Luar Kelas -->
+        <div class="gallery-item group bg-surface-card rounded-xl border border-border-subtle hover:border-tertiary-fixed-dim transition-all duration-300 flex flex-col overflow-hidden relative shadow-sm hover:shadow-lg" data-category="luar">
+          <div class="h-[3px] w-full bg-secondary-container"></div>
+          <div class="relative overflow-hidden aspect-[16/10] bg-surface-container">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger" data-alt="Grup belajar dan peer-programming mahasiswa TI Reg D saling berbagi catatan kuliah." data-category-name="Luar Kelas" data-date="Februari 2025" data-desc="Bukan sekadar teman sekelas, melainkan wadah keluarga kedua yang saling mendukung di setiap proses pembelajaran." data-title="Keluarga TI Reg D" src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1000&auto=format&fit=crop">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container/20 backdrop-blur-md border border-secondary-container/40 text-secondary text-[11px] font-semibold">Luar Kelas</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center gap-1.5 text-outline text-xs mb-2">
+                <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+                <span>Februari 2025</span>
+              </div>
+              <h3 class="font-headline-md text-lg font-bold text-text-tinta mb-2 line-clamp-2">Keluarga TI Reg D</h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">Bukan sekadar teman sekelas, melainkan wadah keluarga kedua yang saling mendukung.</p>
+            </div>
+            <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-xs text-outline">Ruang Diskusi & Belajar</span>
+              <button class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-secondary transition-colors detail-btn">
+                <span>Lihat Penuh</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 5: Kampus -->
+        <div class="gallery-item group bg-surface-card rounded-xl border border-border-subtle hover:border-tertiary-fixed-dim transition-all duration-300 flex flex-col overflow-hidden relative shadow-sm hover:shadow-lg" data-category="kampus">
+          <div class="h-[3px] w-full bg-secondary-container"></div>
+          <div class="relative overflow-hidden aspect-[16/10] bg-surface-container">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger" data-alt="Praktikum laboratorium komputer pemrograman web dan database mahasiswa TI Reg D." data-category-name="Kampus" data-date="Oktober 2024" data-desc="Suasana fokus bereksperimen dan belajar teknologi jaringan serta pemrograman di Lab Komputer Kampus UNISKA MAB Banjarmasin." data-title="Praktikum Laboratorium" src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1000&auto=format&fit=crop">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-tertiary-fixed/20 backdrop-blur-md border border-tertiary-fixed/40 text-primary-container text-[11px] font-semibold">Kampus</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center gap-1.5 text-outline text-xs mb-2">
+                <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+                <span>Oktober 2024</span>
+              </div>
+              <h3 class="font-headline-md text-lg font-bold text-text-tinta mb-2 line-clamp-2">Praktikum Laboratorium</h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">Suasana fokus bereksperimen dan belajar teknologi jaringan serta pemrograman.</p>
+            </div>
+            <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-xs text-outline">Lab Komputer A</span>
+              <button class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-secondary transition-colors detail-btn">
+                <span>Lihat Penuh</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 6: Luar Kelas -->
+        <div class="gallery-item group bg-surface-card rounded-xl border border-border-subtle hover:border-tertiary-fixed-dim transition-all duration-300 flex flex-col overflow-hidden relative shadow-sm hover:shadow-lg" data-category="luar">
+          <div class="h-[3px] w-full bg-secondary-container"></div>
+          <div class="relative overflow-hidden aspect-[16/10] bg-surface-container">
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer gallery-trigger" data-alt="Suasana santai dan coffee break bersama rekan kelas TI Reg D Banjarmasin." data-category-name="Luar Kelas" data-date="Desember 2024" data-desc="Melepaskan penat setelah kuliah dengan ngobrol santai dan berbagi cerita hangat di sudut kota Banjarmasin." data-title="Waktu Santai Bersama" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1000&auto=format&fit=crop">
+            <span class="absolute top-3 left-3 px-3 py-1 rounded-full bg-secondary-container/20 backdrop-blur-md border border-secondary-container/40 text-secondary text-[11px] font-semibold">Luar Kelas</span>
+          </div>
+          <div class="p-5 flex flex-col flex-grow justify-between">
+            <div>
+              <div class="flex items-center gap-1.5 text-outline text-xs mb-2">
+                <span class="material-symbols-outlined text-[15px]">calendar_today</span>
+                <span>Desember 2024</span>
+              </div>
+              <h3 class="font-headline-md text-lg font-bold text-text-tinta mb-2 line-clamp-2">Waktu Santai Bersama</h3>
+              <p class="text-on-surface-variant text-sm line-clamp-2 mb-4">Melepaskan penat setelah kuliah dengan ngobrol santai dan berbagi cerita.</p>
+            </div>
+            <div class="pt-3 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-xs text-outline">Banjarmasin Corner</span>
+              <button class="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:text-secondary transition-colors detail-btn">
+                <span>Lihat Penuh</span>
+                <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
-    <!-- MODAL POPUP GAMBAR (LIGHTBOX) -->
-    <div id="imageModal" class="modal-lightbox">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modalImg" alt="Zoom Foto">
-        <div id="modalCaption"></div>
-    </div>
-
-    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
-    <div class="mobile-bottom-nav">
-        <!-- Beranda -->
-        <a href="home.html" class="nav-item">
-            <i class="ph-bold ph-house"></i>
-            <span>Beranda</span>
-        </a>
-        <!-- Album (Aktif di halaman ini) -->
-        <a href="album.html" class="nav-item active">
-            <i class="ph-bold ph-squares-four"></i>
-            <span>Album</span>
-        </a>
-        <!-- Jadwal -->
-        <a href="jadwal.html" class="nav-item">
-            <i class="ph-bold ph-calendar"></i>
-            <span>Jadwal</span>
-        </a>
-        <!-- Profil -->
-        <a href="profil.html" class="nav-item">
-            <i class="ph-bold ph-user"></i>
-            <span>Profil</span>
-        </a>
-    </div>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-content">
-            <div class="f-left">
-                <h2>TI Reg D <span>BJM</span></h2>
-                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+    <!-- SECTION HIGHLIGHT MOMEN BERSEJARAH -->
+    <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-16">
+      <div class="scroll-reveal bg-primary-container rounded-2xl overflow-hidden border border-white/10 relative p-6 md:p-10 shadow-xl">
+        <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-secondary-container/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 space-y-4 text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary-container/20 border border-secondary-container/30 text-secondary-container">
+              <span class="material-symbols-outlined text-[16px]">verified</span>
+              <span class="text-xs font-semibold tracking-wide">Sorotan Utama Tahun 2026</span>
             </div>
-            <div class="f-right">
-                <p>&copy; 2026 Crafted by Rahmat - Junior Web Dev.</p>
+            <h2 class="font-headline-lg text-[28px] md:text-[36px] text-white font-bold leading-tight">
+              Dari Error Pertama Hingga Kolaborasi Nyata
+            </h2>
+            <p class="font-body-lg text-[15px] sm:text-[16px] text-surface-container-highest leading-relaxed">
+              "Di kelas TI Reg D Banjarmasin, kami membuktikan bahwa baris kode yang rumit menjadi ringan saat diselesaikan bersama. Dari kebingungan sintaks di semester awal, kini kami melahirkan solusi perangkat lunak yang berdaya guna bagi lingkungan sekitar."
+            </p>
+            <div class="pt-2 flex items-center gap-4">
+              <div class="w-10 h-10 rounded-full bg-tertiary-fixed text-primary font-bold flex items-center justify-center font-headline-md">
+                KD
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-white">Komting & Tim Kreatif TI Reg D</p>
+                <p class="text-xs text-tertiary-fixed">Universitas Islam Kalimantan MAB Banjarmasin</p>
+              </div>
             </div>
+          </div>
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-xl overflow-hidden border-2 border-secondary-container/40 shadow-2xl aspect-[4/3] group">
+              <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 cursor-pointer gallery-trigger" data-alt="Foto Angkatan Mahasiswa TI Reg D" data-category-name="Momen Bersejarah" data-date="Tahun Akademik 2024-2026" data-desc="Foto bersama seluruh civitas mahasiswa TI Reg D Banjarmasin sebagai simbol ikatan persaudaraan dan dedikasi menggapai gelar Sarjana Komputer." data-title="Momen Kebersamaan TI Reg D Angkatan 2026" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=1000&auto=format&fit=crop">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80"></div>
+              <div class="absolute bottom-3 left-3 text-white">
+                <span class="text-xs bg-black/40 backdrop-blur px-2.5 py-1 rounded-full text-secondary-container font-semibold">Foto Angkatan 2026</span>
+              </div>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Memanggil JS Khusus Halaman Album -->
-    <script src="js/album.js"></script>
+  <!-- LIGHTBOX MODAL -->
+  <div class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm hidden items-center justify-center p-4" id="lightbox-modal">
+    <div class="bg-surface-card rounded-2xl max-w-3xl w-full overflow-hidden border border-border-subtle shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+      <div class="h-1.5 bg-secondary-container w-full"></div>
+      <button class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-black/60 text-white hover:bg-black flex items-center justify-center transition-colors" id="close-modal">
+        <span class="material-symbols-outlined text-[20px]">close</span>
+      </button>
+      <div class="relative aspect-[16/10] bg-black">
+        <img alt="" class="w-full h-full object-contain" id="modal-img" src="">
+      </div>
+      <div class="p-6 text-left">
+        <div class="flex items-center gap-3 mb-2">
+          <span class="px-3 py-1 rounded-full bg-tertiary-fixed/20 text-primary-container text-xs font-semibold" id="modal-badge"></span>
+          <span class="text-outline text-xs flex items-center gap-1" id="modal-date">
+            <span class="material-symbols-outlined text-[15px]">calendar_month</span>
+            <span id="modal-date-text"></span>
+          </span>
+        </div>
+        <h3 class="font-headline-md text-xl font-bold text-text-tinta mb-2" id="modal-title"></h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed" id="modal-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-gradient-to-b from-primary-container to-hutan-malam-dark text-on-primary border-t border-tertiary-fixed/15">
+    <div class="w-full px-6 lg:px-12 py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mx-auto max-w-7xl">
+      <div class="text-left space-y-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed sinyal-glow"></span>
+          <span class="font-headline-md text-lg font-bold text-white tracking-tight">TI Reg D BJM</span>
+        </div>
+        <p class="text-xs text-on-primary/70 max-w-md leading-relaxed">Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-mono text-on-primary/70">
+        <p>© 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+      </div>
+    </div>
+  </footer>
+
+ <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
+  <div class="mobile-bottom-nav">
+    <!-- Ganti tulisan "active" ke menu yang sesuai di masing-masing halaman HTML -->
+    <a href="home.html" class="nav-item">
+      <span class="material-symbols-outlined">home</span>
+    </a>
+    <a href="profil.html" class="nav-item">
+      <span class="material-symbols-outlined">group</span>
+    </a>
+    <a href="album.html" class="nav-item active">
+      <span class="material-symbols-outlined">photo_library</span>
+    </a>
+    <a href="jadwal.html" class="nav-item">
+      <span class="material-symbols-outlined">calendar_month</span>
+    </a>
+  </div>
+
+  <!-- Interactive JavaScript for Category Filtering & Lightbox Modal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // =======================================================
+      // 1. EFEK SCROLL REVEAL (Animasi Muncul Perlahan)
+      // =======================================================
+      const revealElements = document.querySelectorAll('.scroll-reveal, .reveal-item');
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  requestAnimationFrame(() => {
+                      entry.target.classList.add('active');
+                  });
+                  observer.unobserve(entry.target);
+              }
+          });
+      }, {
+          rootMargin: "0px 0px -30px 0px", 
+          threshold: 0.05
+      });
+
+      revealElements.forEach(el => revealObserver.observe(el));
+
+
+      // =======================================================
+      // 2. FITUR FILTER KATEGORI ALBUM FOTO
+      // =======================================================
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const galleryItems = document.querySelectorAll('.gallery-item');
+
+      if (filterButtons.length > 0 && galleryItems.length > 0) {
+          filterButtons.forEach(button => {
+              button.addEventListener('click', () => {
+                  filterButtons.forEach(btn => {
+                      btn.classList.remove('bg-primary-container', 'text-white', 'shadow-sm');
+                      btn.classList.add('bg-white', 'text-on-surface-variant', 'border', 'border-border-subtle');
+                  });
+
+                  button.classList.add('bg-primary-container', 'text-white', 'shadow-sm');
+                  button.classList.remove('bg-white', 'text-on-surface-variant', 'border', 'border-border-subtle');
+
+                  const filterValue = button.getAttribute('data-filter');
+
+                  galleryItems.forEach(item => {
+                      const category = item.getAttribute('data-category');
+                      
+                      if (filterValue === 'all' || category === filterValue) {
+                          item.style.display = 'flex';
+                          setTimeout(() => {
+                              item.style.opacity = '1';
+                              item.style.transform = 'scale(1)';
+                          }, 10);
+                      } else {
+                          item.style.opacity = '0';
+                          item.style.transform = 'scale(0.95)';
+                          setTimeout(() => {
+                              if (item.style.opacity === '0') {
+                                  item.style.display = 'none';
+                              }
+                          }, 300);
+                      }
+                  });
+              });
+          });
+      }
+
+
+      // =======================================================
+      // 3. FITUR LIGHTBOX MODAL (Zoom Foto & Tampil Detail)
+      // =======================================================
+      const modal = document.getElementById('lightbox-modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDesc = document.getElementById('modal-desc');
+      const modalBadge = document.getElementById('modal-badge');
+      const modalDateText = document.getElementById('modal-date-text');
+      const closeModal = document.getElementById('close-modal');
+
+      function openModalWithData(triggerEl) {
+          if (!modal) return;
+          
+          const card = triggerEl.closest('.gallery-item');
+          
+          if (modalImg) modalImg.src = triggerEl.src || '';
+          if (modalTitle) modalTitle.textContent = triggerEl.getAttribute('data-title') || (card ? card.querySelector('h3').innerText : 'Dokumentasi');
+          if (modalDesc) modalDesc.textContent = triggerEl.getAttribute('data-desc') || '';
+          if (modalBadge) modalBadge.textContent = triggerEl.getAttribute('data-category-name') || 'Momen';
+          if (modalDateText) modalDateText.textContent = triggerEl.getAttribute('data-date') || '-';
+
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden'; 
+      }
+
+      document.querySelectorAll('.gallery-trigger').forEach(img => {
+          img.addEventListener('click', () => openModalWithData(img));
+      });
+
+      document.querySelectorAll('.detail-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+              const card = e.target.closest('.gallery-item');
+              if (card) {
+                  const img = card.querySelector('.gallery-trigger');
+                  if (img) openModalWithData(img);
+              }
+          });
+      });
+
+      function closeLightbox() {
+          if (modal) {
+              modal.classList.add('hidden');
+              modal.classList.remove('flex');
+              document.body.style.overflow = ''; 
+          }
+      }
+
+      if (closeModal) {
+          closeModal.addEventListener('click', closeLightbox);
+      }
+
+      if (modal) {
+          modal.addEventListener('click', (e) => {
+              if (e.target === modal) {
+                  closeLightbox();
+              }
+          });
+      }
+
+      document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+              closeLightbox();
+          }
+      });
+    });
+  </script>
 </body>
 </html>

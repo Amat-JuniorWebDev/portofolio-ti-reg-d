@@ -1,121 +1,353 @@
 <!DOCTYPE html>
-<html lang="id">
+<html class="scroll-smooth" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - TI Reg D BJM</title>
-    
-    <!-- Font Premium: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <!-- Memanggil CSS Utama (Navbar, Footer, Tema Biru) -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    <!-- Realtime Cache Busting CSS Khusus Contact -->
-    <script>
-        document.write('<link rel="stylesheet" href="css/contact.css?v=' + new Date().getTime() + '">');
-    </script>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Contact Us - TI Reg D BJM</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- CSS Utama -->
+  <script>
+    document.write('<link rel="stylesheet" href="css/home.css?v=' + new Date().getTime() + '">');
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- KUNCI PERBAIKAN: Konfigurasi Tailwind FULL (Identik 100% dengan Home & Jadwal) -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d6e6e0",
+            "surface-variant": "#d6e6e0",
+            "surface-bright": "#edfdf6",
+            "surface-container-low": "#e7f7f1",
+            "hutan-malam-dark": "#0A211C",
+            "on-primary-fixed-variant": "#2d4d46",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#25332f",
+            "outline": "#717976",
+            "surface-card": "#FFFFFF",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#2a1800",
+            "surface": "#edfdf6",
+            "primary": "#001b17",
+            "inverse-primary": "#abcec5",
+            "tertiary-fixed": "#73f8e2",
+            "on-surface": "#101e1a",
+            "background": "#edfdf6",
+            "on-primary-container": "#789a92",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#001b17",
+            "surface-kertas": "#F5F6F3",
+            "surface-container": "#e1f2eb",
+            "secondary": "#835400",
+            "on-error": "#ffffff",
+            "secondary-container": "#fdb244",
+            "outline-variant": "#c1c8c5",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#00201b",
+            "surface-container-high": "#dcece5",
+            "on-secondary-fixed-variant": "#633f00",
+            "primary-fixed": "#c7eae0",
+            "on-tertiary-container": "#00a593",
+            "secondary-fixed-dim": "#ffb956",
+            "on-background": "#101e1a",
+            "secondary-fixed": "#ffddb5",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#414846",
+            "on-tertiary-fixed-variant": "#005047",
+            "tertiary-fixed-dim": "#52dbc6",
+            "on-error-container": "#93000a",
+            "border-subtle": "#E2E5DE",
+            "surface-dim": "#cdded7",
+            "error": "#ba1a1a",
+            "primary-container": "#10312b",
+            "text-tinta": "#10231F",
+            "primary-fixed-dim": "#abcec5",
+            "tertiary-container": "#00322b",
+            "on-secondary-container": "#6e4600",
+            "inverse-on-surface": "#e4f4ee",
+            "on-tertiary-fixed": "#00201b",
+            "surface-tint": "#44655d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Sora", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Sora", "sans-serif"],
+            "headline-lg-mobile": ["Sora", "sans-serif"],
+            "headline-md-mobile": ["Sora", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "display-hero-mobile": ["Sora", "sans-serif"],
+            "body-lg-mobile": ["Inter", "sans-serif"],
+            "display-hero": ["Sora", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "1.3", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md-mobile": ["18px", { "lineHeight": "1.35", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg-mobile": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "display-hero": ["56px", { "lineHeight": "1.15", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "1.3", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-surface-kertas text-text-tinta font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-hutan-malam-dark">
 
-    <!-- BACKGROUND GLOW EFEK BIRU -->
-    <div class="bg-glow glow-purple"></div>
-    <div class="bg-glow glow-blue"></div>
+  <div class="bg-ambient-glow glow-cyan"></div>
+  <div class="bg-ambient-glow glow-amber"></div>
 
-    <!-- NAVBAR PREMIUM -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                TI Reg <span>D BJM</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="home.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="album.html">Album Kelas</a></li>
-                <li><a href="jadwal.html">Jadwal</a></li>
-            </ul>
-            <a href="contact.html" class="btn-neon active-btn">Contact Us</a>
+  <!-- 1. TOP NAVBAR -->
+  <header class="bg-hutan-malam-dark/90 backdrop-blur-md top-0 z-50 sticky border-b border-tertiary-fixed/15 shadow-sm">
+    <div class="w-full px-4 sm:px-6 lg:px-12 py-3.5 flex items-center justify-between mx-auto max-w-7xl">
+      <a class="flex items-center gap-2.5 group" href="home.html">
+        <span class="relative flex h-3 w-3 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-fixed sinyal-glow"></span>
+        </span>
+        <div class="flex flex-col text-left">
+          <span class="font-headline-md text-[15px] sm:text-[17px] font-bold text-white tracking-tight group-hover:text-tertiary-fixed transition-colors duration-200">TI Reg D BJM</span>
+          <span class="text-[9px] uppercase font-mono tracking-wider text-on-primary/50 -mt-0.5">Teknik Informatika Banjarmasin</span>
         </div>
-    </nav>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 bg-white/5 border border-white/10 p-1.5 rounded-full backdrop-blur-sm">
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="home.html">Beranda</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="profil.html">Profil</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="album.html">Album Kelas</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="jadwal.html">Jadwal</a>
+      </nav>
 
-    <!-- HEADER CONTACT -->
-    <section class="contact-hero">
-        <div class="container text-center">
-            <div class="badge-neon mx-auto reveal-item">
-                <i class="ph-fill ph-chats-teardrop"></i> Hubungi Kami
-            </div>
-            <h1 class="contact-title reveal-item delay-1">Pusat Bantuan & <br><span class="text-gradient">Informasi Kelas</span></h1>
-            <p class="contact-subtitle reveal-item delay-2">Ada keperluan akademik, kolaborasi project, atau hal penting lainnya? Silakan hubungi Ketua Kelas kami melalui WhatsApp di bawah ini.</p>
-        </div>
-    </section>
-
-    <!-- KONTEN UTAMA KARTU KONTAK -->
-    <section class="contact-section section-darker">
-        <div class="container">
-            <div class="contact-card-wrapper reveal-item">
-                
-                <!-- Card Ketua Kelas (WhatsApp Direct) -->
-                <div class="wa-card">
-                    <div class="wa-avatar">
-                        <i class="ph-fill ph-user-circle-gear"></i>
-                    </div>
-                    <div class="wa-info">
-                        <span class="wa-badge">Ketua Kelas TI Reg D</span>
-                        <h3>Rahmat Ridha Amrullah</h3>
-                        <p class="wa-number"><i class="ph-bold ph-phone"></i> +62 821-5231-6910</p>
-                        <p class="wa-desc">Respon cepat untuk urusan perizinan, informasi kuliah, dan koordinasi angkatan.</p>
-                    </div>
-                    <!-- Tombol Langsung ke WhatsApp -->
-                    <a href="https://wa.me/6282152316910?text=Halo%20Ketua%20Kelas%20TI%20Reg%20D%20BJM,%20saya%20ingin%20menanyakan..." target="_blank" class="btn-whatsapp">
-                        <i class="ph-fill ph-whatsapp-logo"></i> Hubungi via WhatsApp
-                    </a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
-    <div class="mobile-bottom-nav">
-        <a href="home.html" class="nav-item">
-            <i class="ph-bold ph-house"></i>
-            <span>Beranda</span>
+      <div class="flex items-center gap-2">
+        <!-- Tombol Contact Us Dibuat Aktif -->
+        <div class="flex items-center gap-2">
+        <a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-hutan-malam-dark font-label-md text-xs font-bold transition-all duration-200 active:scale-95 lampion-glow shadow-sm" href="contact.html">
+          <span class="material-symbols-outlined text-[15px]">mail</span>
+          <span>Contact Us</span>
         </a>
-        <a href="album.html" class="nav-item">
-            <i class="ph-bold ph-squares-four"></i>
-            <span>Album</span>
-        </a>
-        <a href="jadwal.html" class="nav-item">
-            <i class="ph-bold ph-calendar"></i>
-            <span>Jadwal</span>
-        </a>
-        <a href="profil.html" class="nav-item">
-            <i class="ph-bold ph-user"></i>
-            <span>Profil</span>
-        </a>
+      </div>
     </div>
+  </header>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-content">
-            <div class="f-left">
-                <h2>TI Reg D <span>BJM</span></h2>
-                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
-            </div>
-            <div class="f-right">
-                <p>&copy; 2026 Crafted by Rahmat - Junior Web Dev.</p>
-            </div>
+  <main class="flex-grow">
+    <!-- 2. HEADER CONTACT HERO -->
+    <section class="relative bg-gradient-to-b from-primary-container via-[#0d2722] to-hutan-malam-dark text-on-primary pt-16 lg:pt-24 overflow-hidden text-center">
+      <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#73f8e2 1px, transparent 1px); background-size: 32px 32px;"></div>
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-96 h-96 bg-tertiary-fixed/10 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-4xl mx-auto px-6 lg:px-12 relative z-10 pb-16">
+        <div class="scroll-reveal inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-tertiary-fixed/30 text-tertiary-fixed font-label-md text-xs tracking-wide uppercase backdrop-blur-md shadow-sm mb-5 sinyal-glow">
+          <span class="w-2 h-2 rounded-full bg-tertiary-fixed animate-ping"></span>
+          <span class="material-symbols-outlined text-[16px] text-tertiary-fixed">contact_support</span>
+          <span class="tracking-wider font-semibold font-mono">Executive Contact & Help Center</span>
         </div>
-    </footer>
+        
+        <h1 class="scroll-reveal delay-100 font-headline-lg text-[32px] sm:text-[40px] md:text-[56px] font-bold text-white tracking-tight leading-tight mb-4">
+          Pusat Layanan & <br class="hidden sm:inline"><span class="text-tertiary-fixed drop-shadow-sm">Informasi Terpadu</span>
+        </h1>
+        
+        <p class="scroll-reveal delay-200 font-body-lg text-[15px] sm:text-[16px] text-on-primary/80 max-w-2xl mx-auto leading-relaxed mb-6">
+          Perizinan perkuliahan, urusan akademik, hingga kolaborasi pengembangan perangkat lunak & web teknologi bersama Ketua Kelas.
+        </p>
+        
+        <div class="scroll-reveal delay-300 flex flex-wrap items-center justify-center gap-3">
+          <div class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-on-primary/90 text-xs font-mono backdrop-blur-sm flex items-center gap-2 shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Fast Response • Siap Membantu</span>
+          </div>
+          <div class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-on-primary/90 text-xs font-mono backdrop-blur-sm flex items-center gap-2 shadow-sm">
+            <span class="material-symbols-outlined text-[15px] text-secondary-container">verified</span>
+            <span>Official Class Liaison</span>
+          </div>
+          <div class="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-on-primary/90 text-xs font-mono backdrop-blur-sm flex items-center gap-2 shadow-sm">
+            <span class="material-symbols-outlined text-[15px] text-tertiary-fixed">terminal</span>
+            <span>Web Dev & Tech Support</span>
+          </div>
+        </div>
+      </div>
 
-    <!-- Realtime Cache Busting JS -->
-    <script>
-        document.write('<script src="js/contact.js?v=' + new Date().getTime() + '"><\/script>');
-    </script>
+      <div class="w-full overflow-hidden leading-none mt-10 sm:mt-16 -mb-[1px] relative z-20">
+        <svg class="relative block w-full h-10 sm:h-12 lg:h-24" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 120">
+          <path d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="#F5F6F3"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 3. SECTION KONTEN UTAMA KARTU KONTAK -->
+    <section class="py-12 lg:py-20 bg-surface-kertas">
+      <div class="max-w-4xl mx-auto px-6 lg:px-12">
+        
+        <!-- Main WhatsApp Card -->
+        <div class="scroll-reveal relative bg-surface-card rounded-2xl border border-border-subtle p-7 sm:p-10 shadow-xl hover:border-tertiary-fixed-dim transition-all duration-300 overflow-hidden group">
+          <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-secondary-container via-tertiary-fixed to-emerald-500"></div>
+          
+          <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6 sm:gap-8 text-center sm:text-left">
+            <div class="relative flex-shrink-0">
+              <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-gradient-to-br from-primary-container to-hutan-malam-dark border border-tertiary-fixed/30 flex items-center justify-center text-tertiary-fixed shadow-lg group-hover:scale-105 transition-transform duration-300">
+                <span class="material-symbols-outlined text-5xl text-tertiary-fixed">terminal</span>
+              </div>
+              <span class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-white flex items-center justify-center text-white shadow-sm" title="Aktif & Terverifikasi">
+                <span class="material-symbols-outlined text-[13px] font-bold">check</span>
+              </span>
+            </div>
+            
+            <div class="flex-1 space-y-3">
+              <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2">
+                <span class="px-3 py-1 rounded-full bg-secondary-fixed/40 text-secondary text-xs font-label-md font-bold uppercase tracking-wider inline-block">Ketua Kelas TI Reg D</span>
+                <span class="px-3 py-1 rounded-full bg-tertiary-fixed/15 text-primary-container text-xs font-mono font-semibold inline-flex items-center gap-1">
+                  <span class="w-1.5 h-1.5 rounded-full bg-tertiary-fixed"></span>Junior Web Dev
+                </span>
+                <span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-mono">UNISKA MAB Banjarmasin</span>
+              </div>
+              
+              <h2 class="font-headline-md text-2xl sm:text-3xl font-bold text-text-tinta tracking-tight">Rahmat Ridha Amrullah</h2>
+              
+              <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-0.5">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-surface-container-low border border-border-subtle font-mono text-sm font-bold text-primary-container shadow-sm">
+                  <span class="material-symbols-outlined text-[18px] text-emerald-600">call</span>
+                  <span>+62 821-5231-6910</span>
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 text-emerald-700 text-xs font-mono font-medium border border-emerald-500/20">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span>Siap Melayani Koordinasi</span>
+                </div>
+              </div>
+              
+              <p class="font-body-md text-sm text-on-surface-variant max-w-xl leading-relaxed pt-1">
+                Hubungi untuk urusan dispensasi perkuliahan, pengesahan surat izin, koordinasi mata kuliah, atau diskusi kolaborasi project web & teknologi angkatan.
+              </p>
+              
+              <div class="pt-4 flex flex-col sm:flex-row items-center gap-3">
+                <a class="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white font-headline-md text-sm font-bold wa-glow transition-all duration-200 active:scale-95 shadow-md w-full sm:w-auto" href="https://whatsapp.com/channel/0029VbE36AC3mFYCd5PMlM2w" target="_blank" rel="noopener noreferrer">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.074-1.809-.411-1.498-.619-2.464-2.14-2.539-2.24-.075-.1-1.609-2.138-1.609-4.078 0-1.94 1.017-2.894 1.378-3.29.362-.396.79-.496 1.054-.496.264 0 .528.005.762.016.246.012.576-.094.901.687.337.81 1.152 2.808 1.252 3.013.1.205.167.446.033.713-.134.267-.201.433-.399.664-.198.232-.417.518-.596.695-.199.197-.406.411-.174.81.232.399 1.033 1.706 2.217 2.76 1.524 1.356 2.809 1.776 3.208 1.975.399.199.633.166.866-.1.233-.266.997-1.162 1.263-1.561.266-.399.532-.333.898-.199.366.133 2.329 1.097 2.728 1.296.399.199.665.299.764.466.099.167.099.967-.045 1.372z"></path></svg>
+                  <span>Hubungi via WhatsApp</span>
+                  <span class="material-symbols-outlined text-[18px]">arrow_outward</span>
+                </a>
+                <div class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface-container-high border border-border-subtle text-on-surface-variant font-label-md text-xs font-semibold select-none cursor-default">
+                  <span class="material-symbols-outlined text-[17px] text-secondary">pending</span>
+                  <span>Portofolio Segera Hadir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Info Mini Bento Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+          <div class="scroll-reveal delay-100 bg-surface-card rounded-2xl border border-border-subtle p-6 hover:border-tertiary-fixed-dim transition-all shadow-md flex flex-col justify-between group">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-tertiary-fixed/15 flex items-center justify-center text-primary-container group-hover:scale-105 transition-transform duration-200">
+                  <span class="material-symbols-outlined text-2xl">assignment_turned_in</span>
+                </div>
+                <span class="text-[11px] font-mono text-secondary font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-secondary-fixed/30">Akademik & Absensi</span>
+              </div>
+              <h3 class="font-headline-md text-base font-bold text-text-tinta pt-1">Perizinan & Koordinasi Dosen</h3>
+              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Pengurusan surat izin sakit, dispensasi kegiatan organisasi, hingga penyampaian kendala jadwal kuliah secara langsung dengan dosen pengampu.</p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-[11px] font-mono text-primary-container font-semibold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>Prosedur Resmi Kelas
+              </span>
+              <span class="text-xs font-label-md text-on-surface-variant flex items-center gap-1">Respons Cepat <span class="material-symbols-outlined text-[14px]">schedule</span></span>
+            </div>
+          </div>
+          
+          <div class="scroll-reveal delay-200 bg-surface-card rounded-2xl border border-border-subtle p-6 hover:border-secondary transition-all shadow-md flex flex-col justify-between group">
+            <div class="space-y-3">
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-secondary-fixed/30 flex items-center justify-center text-secondary group-hover:scale-105 transition-transform duration-200">
+                  <span class="material-symbols-outlined text-2xl">code</span>
+                </div>
+                <span class="text-[11px] font-mono text-primary-container font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-tertiary-fixed/20">Web Dev & Tech Collab</span>
+              </div>
+              <h3 class="font-headline-md text-base font-bold text-text-tinta pt-1">Kolaborasi Proyek & Riset IT</h3>
+              <p class="font-body-md text-xs text-on-surface-variant leading-relaxed">Terbuka untuk tawaran kolaborasi riset informatika, hackathon IT, pembuatan website/software, dan project kolaboratif antar mahasiswa se-Banua.</p>
+            </div>
+            <div class="pt-5 mt-4 border-t border-border-subtle flex items-center justify-between">
+              <span class="text-[11px] font-mono text-secondary font-semibold flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-secondary-container"></span>Open for Collaboration
+              </span>
+              <span class="text-xs font-label-md font-semibold text-secondary flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span><span>Segera Hadir</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- 4. MOBILE BOTTOM NAVIGATION (Terkunci 100% tanpa teks) -->
+  <div class="mobile-bottom-nav">
+    <a href="home.html" class="nav-item">
+      <span class="material-symbols-outlined">home</span>
+    </a>
+    <a href="profil.html" class="nav-item">
+      <span class="material-symbols-outlined">group</span>
+    </a>
+    <a href="album.html" class="nav-item">
+      <span class="material-symbols-outlined">photo_library</span>
+    </a>
+    <a href="jadwal.html" class="nav-item">
+      <span class="material-symbols-outlined">calendar_month</span>
+    </a>
+  </div>
+
+  <!-- 5. FOOTER -->
+  <footer class="bg-gradient-to-b from-primary-container to-hutan-malam-dark text-on-primary border-t border-tertiary-fixed/15">
+    <div class="w-full px-6 lg:px-12 py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mx-auto max-w-7xl">
+      <div class="text-left space-y-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed sinyal-glow"></span>
+          <span class="font-headline-md text-lg font-bold text-white tracking-tight">TI Reg D BJM</span>
+        </div>
+        <p class="text-xs text-on-primary/70 max-w-md leading-relaxed">Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-mono text-on-primary/70">
+        <p>© 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/contact.js"></script>
 </body>
 </html>

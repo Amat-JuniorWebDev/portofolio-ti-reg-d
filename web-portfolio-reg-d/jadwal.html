@@ -1,155 +1,336 @@
 <!DOCTYPE html>
-<html lang="id">
+<html class="scroll-smooth" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jadwal Perkuliahan - TI Reg D BJM</title>
-    
-    <!-- Font Premium: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <!-- Memanggil CSS Utama (Untuk Navbar, Footer, Background & Tema Biru) -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Memanggil CSS Khusus Halaman Jadwal -->
-    <link rel="stylesheet" href="css/jadwal.css?v=1.0">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Jadwal Perkuliahan - TI Reg D BJM</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Realtime Cache Busting CSS -->
+  <script>
+    document.write('<link rel="stylesheet" href="css/home.css?v=' + new Date().getTime() + '">');
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- KUNCI PERBAIKAN: Konfigurasi Tailwind FULL (Tidak ada yang dipotong) -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-highest": "#d6e6e0",
+            "surface-variant": "#d6e6e0",
+            "surface-bright": "#edfdf6",
+            "surface-container-low": "#e7f7f1",
+            "hutan-malam-dark": "#0A211C",
+            "on-primary-fixed-variant": "#2d4d46",
+            "on-tertiary": "#ffffff",
+            "inverse-surface": "#25332f",
+            "outline": "#717976",
+            "surface-card": "#FFFFFF",
+            "on-primary": "#ffffff",
+            "on-secondary-fixed": "#2a1800",
+            "surface": "#edfdf6",
+            "primary": "#001b17",
+            "inverse-primary": "#abcec5",
+            "tertiary-fixed": "#73f8e2",
+            "on-surface": "#101e1a",
+            "background": "#edfdf6",
+            "on-primary-container": "#789a92",
+            "surface-container-lowest": "#ffffff",
+            "tertiary": "#001b17",
+            "surface-kertas": "#F5F6F3",
+            "surface-container": "#e1f2eb",
+            "secondary": "#835400",
+            "on-error": "#ffffff",
+            "secondary-container": "#fdb244",
+            "outline-variant": "#c1c8c5",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#00201b",
+            "surface-container-high": "#dcece5",
+            "on-secondary-fixed-variant": "#633f00",
+            "primary-fixed": "#c7eae0",
+            "on-tertiary-container": "#00a593",
+            "secondary-fixed-dim": "#ffb956",
+            "on-background": "#101e1a",
+            "secondary-fixed": "#ffddb5",
+            "error-container": "#ffdad6",
+            "on-surface-variant": "#414846",
+            "on-tertiary-fixed-variant": "#005047",
+            "tertiary-fixed-dim": "#52dbc6",
+            "on-error-container": "#93000a",
+            "border-subtle": "#E2E5DE",
+            "surface-dim": "#cdded7",
+            "error": "#ba1a1a",
+            "primary-container": "#10312b",
+            "text-tinta": "#10231F",
+            "primary-fixed-dim": "#abcec5",
+            "tertiary-container": "#00322b",
+            "on-secondary-container": "#6e4600",
+            "inverse-on-surface": "#e4f4ee",
+            "on-tertiary-fixed": "#00201b",
+            "surface-tint": "#44655d"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-sm": "0.5rem",
+            "gutter-mobile": "1rem",
+            "margin": "3rem",
+            "space-xl": "2.5rem",
+            "margin-mobile": "1.25rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Sora", "sans-serif"],
+            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
+            "headline-lg": ["Sora", "sans-serif"],
+            "headline-lg-mobile": ["Sora", "sans-serif"],
+            "headline-md-mobile": ["Sora", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "display-hero-mobile": ["Sora", "sans-serif"],
+            "body-lg-mobile": ["Inter", "sans-serif"],
+            "display-hero": ["Sora", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "1.3", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "1.25", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md-mobile": ["18px", { "lineHeight": "1.35", "fontWeight": "600" }],
+            "label-md": ["13px", { "lineHeight": "1.4", "fontWeight": "500" }],
+            "display-hero-mobile": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-lg": ["36px", { "lineHeight": "1.2", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-lg-mobile": ["15px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "display-hero": ["56px", { "lineHeight": "1.15", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "1.3", "letterSpacing": "0.04em", "fontWeight": "600" }]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-surface-kertas text-text-tinta font-body-md antialiased min-h-screen flex flex-col selection:bg-secondary-container selection:text-hutan-malam-dark">
 
-    <!-- BACKGROUND GLOW EFEK BIRU -->
-    <div class="bg-glow glow-purple"></div>
-    <div class="bg-glow glow-blue"></div>
+  <div class="bg-ambient-glow glow-cyan"></div>
+  <div class="bg-ambient-glow glow-amber"></div>
 
-    <!-- NAVBAR PREMIUM -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                TI Reg <span>D BJM</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="home.html">Beranda</a></li>
-                <li><a href="profil.html">Profil</a></li>
-                <li><a href="album.html">Album Kelas</a></li>
-                <li><a href="jadwal.html" class="active">Jadwal</a></li>
-            </ul>
-            <a href="contact.html" class="btn-neon">Contact Us</a>
+  <!-- 1. TOP NAVBAR -->
+  <header class="bg-hutan-malam-dark/90 backdrop-blur-md top-0 z-50 sticky border-b border-tertiary-fixed/15 shadow-sm">
+    <div class="w-full px-4 sm:px-6 lg:px-12 py-3.5 flex items-center justify-between mx-auto max-w-7xl">
+      <a class="flex items-center gap-2.5 group" href="home.html">
+        <span class="relative flex h-3 w-3 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-fixed sinyal-glow"></span>
+        </span>
+        <div class="flex flex-col text-left">
+          <span class="font-headline-md text-[15px] sm:text-[17px] font-bold text-white tracking-tight group-hover:text-tertiary-fixed transition-colors duration-200">TI Reg D BJM</span>
+          <span class="text-[9px] uppercase font-mono tracking-wider text-on-primary/50 -mt-0.5">Teknik Informatika Banjarmasin</span>
         </div>
-    </nav>
+      </a>
+      
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 bg-white/5 border border-white/10 p-1.5 rounded-full backdrop-blur-sm">
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="home.html">Beranda</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="profil.html">Profil</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="album.html">Album Kelas</a>
+        <a class="px-4 py-1.5 text-tertiary-fixed font-semibold bg-tertiary-fixed/15 rounded-full font-label-md text-xs transition-all duration-200" href="jadwal.html">Jadwal</a>
+      </nav>
 
-    <!-- HEADER JADWAL -->
-    <section class="jadwal-hero">
-        <div class="container text-center">
-            <div class="badge-neon mx-auto reveal-item">
-                <i class="ph-fill ph-calendar-check"></i> Jadwal Aktif 2026
-            </div>
-            <h1 class="jadwal-title reveal-item delay-1">Jadwal Perkuliahan <br><span class="text-gradient">TI Reg D BJM</span></h1>
-            <p class="jadwal-subtitle reveal-item delay-2">Informasi lengkap jadwal mata kuliah, ruang kelas, dan dosen pengajar untuk semester ini.</p>
-        </div>
-    </section>
-
-    <!-- KONTEN JADWAL -->
-    <section class="jadwal-section section-darker">
-        <div class="container">
-            
-            <!-- Tombol Navigasi Hari (Filter) -->
-            <div class="jadwal-tabs reveal-item">
-                <button class="day-btn active" data-hari="senin">Senin</button>
-                <button class="day-btn" data-hari="selasa">Selasa</button>
-                <button class="day-btn" data-hari="rabu">Rabu</button>
-                <button class="day-btn" data-hari="kamis">Kamis</button>
-                <button class="day-btn" data-hari="jumat">Jumat</button>
-            </div>
-
-            <!-- Area Tampilan Jadwal (Berubah Sesuai Tab) -->
-            <div class="jadwal-content-wrapper reveal-item delay-1">
-                <div id="jadwal-display" class="jadwal-list">
-                    <!-- Konten awal (Senin) di-load langsung di HTML agar rapi -->
-                    <div class="matkul-card">
-                        <div class="mc-time">
-                            <i class="ph-bold ph-clock"></i> 08:00 - 10:30
-                        </div>
-                        <div class="mc-info">
-                            <h3>Pemrograman Web Lanjut</h3>
-                            <div class="mc-details">
-                                <span><i class="ph-fill ph-chalkboard-teacher"></i> Bpk. Hendra, M.Kom</span>
-                                <span><i class="ph-fill ph-map-pin"></i> Lab Komputer 1</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="matkul-card">
-                        <div class="mc-time">
-                            <i class="ph-bold ph-clock"></i> 13:00 - 15:30
-                        </div>
-                        <div class="mc-info">
-                            <h3>Jaringan Komputer Dasar</h3>
-                            <div class="mc-details">
-                                <span><i class="ph-fill ph-chalkboard-teacher"></i> Ibu Ratna, S.T</span>
-                                <span><i class="ph-fill ph-map-pin"></i> Ruang Teori 4</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- INFO TAMBAHAN -->
-    <section class="info-section section-dark">
-        <div class="container">
-            <div class="info-card reveal-item">
-                <div class="info-icon"><i class="ph-fill ph-warning-circle"></i></div>
-                <div class="info-text">
-                    <h4>Pemberitahuan Penting</h4>
-                    <p>Jadwal dapat berubah sewaktu-waktu sesuai dengan kebijakan dosen pengajar atau hari libur nasional. Harap selalu memeriksa pengumuman di grup WhatsApp kelas untuk informasi perubahan jadwal darurat.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
-    <div class="mobile-bottom-nav">
-        <!-- Beranda -->
-        <a href="home.html" class="nav-item">
-            <i class="ph-bold ph-house"></i>
-            <span>Beranda</span>
+      <div class="flex items-center gap-2">
+        <a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-hutan-malam-dark font-label-md text-xs font-bold transition-all duration-200 active:scale-95 lampion-glow shadow-sm" href="contact.html">
+          <span class="material-symbols-outlined text-[15px]">mail</span>
+          <span>Contact Us</span>
         </a>
-        <!-- Album -->
-        <a href="album.html" class="nav-item">
-            <i class="ph-bold ph-squares-four"></i>
-            <span>Album</span>
-        </a>
-        <!-- Jadwal (Aktif di halaman ini) -->
-        <a href="jadwal.html" class="nav-item active">
-            <i class="ph-bold ph-calendar"></i>
-            <span>Jadwal</span>
-        </a>
-        <!-- Profil -->
-        <a href="profil.html" class="nav-item">
-            <i class="ph-bold ph-user"></i>
-            <span>Profil</span>
-        </a>
+      </div>
     </div>
+  </header>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container footer-content">
-            <div class="f-left">
-                <h2>TI Reg D <span>BJM</span></h2>
-                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
-            </div>
-            <div class="f-right">
-                <p>&copy; 2026 Crafted by Rahmat - Junior Web Dev.</p>
-            </div>
+  <main class="flex-grow">
+    <!-- 2. HEADER HERO JADWAL -->
+    <section class="relative bg-gradient-to-b from-primary-container via-[#0d2722] to-hutan-malam-dark text-on-primary pt-16 lg:pt-24 overflow-hidden">
+      <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#73f8e2 1px, transparent 1px); background-size: 32px 32px;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 pb-16">
+        <div class="scroll-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-tertiary-fixed/15 border border-tertiary-fixed/30 text-tertiary-fixed mb-6">
+          <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+          <span class="font-label-md text-xs font-semibold tracking-wide">Jadwal Aktif 2026</span>
         </div>
-    </footer>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-8 text-left">
+            <h1 class="scroll-reveal delay-100 font-headline-lg text-[32px] sm:text-[40px] md:text-[56px] font-bold tracking-tight text-white mb-4">
+              Jadwal Perkuliahan <br><span class="text-tertiary-fixed font-extrabold tracking-normal">TI Reg D BJM</span>
+            </h1>
+            <p class="scroll-reveal delay-200 font-body-lg text-[15px] sm:text-[16px] text-surface-container-highest max-w-2xl leading-relaxed">
+              Informasi lengkap jadwal mata kuliah, ruang kelas, dan dosen pengajar untuk semester ganjil tahun ajaran aktif 2026.
+            </p>
+          </div>
+          
+          <div class="lg:col-span-4 flex flex-wrap lg:flex-col gap-3 justify-start lg:items-end">
+            <div class="scroll-reveal delay-300 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-left w-full sm:w-auto">
+              <div class="w-10 h-10 rounded-lg bg-tertiary-fixed/10 flex flex-shrink-0 items-center justify-center text-tertiary-fixed">
+                <span class="material-symbols-outlined text-[22px]">date_range</span>
+              </div>
+              <div>
+                <p class="font-headline-md text-lg text-white font-bold leading-none">4 Hari</p>
+                <p class="text-[11px] text-surface-container-highest">Senin s.d. Kamis</p>
+              </div>
+            </div>
+            <div class="scroll-reveal delay-400 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-left w-full sm:w-auto">
+              <div class="w-10 h-10 rounded-lg bg-secondary-container/10 flex flex-shrink-0 items-center justify-center text-secondary-container">
+                <span class="material-symbols-outlined text-[22px]">auto_stories</span>
+              </div>
+              <div>
+                <p class="font-headline-md text-lg text-white font-bold leading-none">20+ SKS</p>
+                <p class="text-[11px] text-surface-container-highest">Praktikum & Teori</p>
+              </div>
+            </div>
+            <div class="scroll-reveal delay-500 flex items-center gap-3 px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm text-left w-full sm:w-auto">
+              <div class="w-10 h-10 rounded-lg bg-tertiary-fixed/10 flex flex-shrink-0 items-center justify-center text-tertiary-fixed">
+                <span class="material-symbols-outlined text-[22px]">school</span>
+              </div>
+              <div>
+                <p class="font-headline-md text-lg text-white font-bold leading-none">Ganjil 2026</p>
+                <p class="text-[11px] text-surface-container-highest">Tahun Ajaran Aktif</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- Memanggil JS Khusus Halaman Jadwal -->
-    <script src="js/jadwal.js"></script>
+      <div class="w-full overflow-hidden leading-none mt-10 sm:mt-16 -mb-[1px] relative z-20">
+        <svg class="relative block w-full h-10 sm:h-12 lg:h-24" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 120">
+          <path d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="#F5F6F3"></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 3. SECTION KONTEN JADWAL & FILTER TAB HARI -->
+    <section class="py-12 md:py-16 bg-surface-kertas">
+      <div class="w-full max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="scroll-reveal flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4 border-b border-border-subtle pb-6">
+          <div>
+            <span class="text-xs text-secondary font-semibold uppercase tracking-wider block mb-1">Rangkaian Aktivitas Akademik</span>
+            <h2 class="font-headline-lg text-[28px] md:text-[36px] font-bold text-text-tinta tracking-tight">Pilih Hari Perkuliahan</h2>
+          </div>
+          <div class="flex items-center gap-2 text-sm text-outline">
+            <span class="material-symbols-outlined text-[18px] text-tertiary-fixed-dim">info</span>
+            <span>Waktu zona Banjarmasin (WITA)</span>
+          </div>
+        </div>
+
+        <!-- Tab Tombol Hari Interaktif (Grid Simetris Rapi) -->
+        <div class="scroll-reveal grid grid-cols-2 md:grid-cols-5 gap-3 mb-10" role="tablist">
+          <button class="tab-btn w-full flex justify-center items-center gap-2 px-4 py-3 rounded-lg font-headline-md text-sm font-semibold transition-all duration-200 bg-primary-container text-surface-kertas shadow-sm ring-1 ring-primary-container" data-day="senin">
+            <span class="material-symbols-outlined text-[18px] text-secondary-container">calendar_today</span> Senin
+          </button>
+          <button class="tab-btn w-full flex justify-center items-center gap-2 px-4 py-3 rounded-lg font-headline-md text-sm font-semibold transition-all duration-200 bg-surface-card text-on-surface-variant hover:text-text-tinta border border-border-subtle hover:border-tertiary-fixed" data-day="selasa">
+            <span class="material-symbols-outlined text-[18px]">calendar_today</span> Selasa
+          </button>
+          <button class="tab-btn w-full flex justify-center items-center gap-2 px-4 py-3 rounded-lg font-headline-md text-sm font-semibold transition-all duration-200 bg-surface-card text-on-surface-variant hover:text-text-tinta border border-border-subtle hover:border-tertiary-fixed" data-day="rabu">
+            <span class="material-symbols-outlined text-[18px]">calendar_today</span> Rabu
+          </button>
+          <button class="tab-btn w-full flex justify-center items-center gap-2 px-4 py-3 rounded-lg font-headline-md text-sm font-semibold transition-all duration-200 bg-surface-card text-on-surface-variant hover:text-text-tinta border border-border-subtle hover:border-tertiary-fixed" data-day="kamis">
+            <span class="material-symbols-outlined text-[18px]">calendar_today</span> Kamis
+          </button>
+          <!-- Tombol Jumat dibuat memenuhi 2 kolom di HP agar presisi posisinya di tengah -->
+          <button class="tab-btn col-span-2 md:col-span-1 w-full flex justify-center items-center gap-2 px-4 py-3 rounded-lg font-headline-md text-sm font-semibold transition-all duration-200 bg-surface-card text-on-surface-variant hover:text-text-tinta border border-border-subtle hover:border-tertiary-fixed" data-day="jumat">
+            <span class="material-symbols-outlined text-[18px]">calendar_today</span> Jumat
+          </button>
+        </div>
+
+        <div class="transition-opacity duration-300 min-h-[380px] opacity-100" id="schedule-wrapper">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="cards-container">
+            <!-- Data JSON Dimuat Disini Oleh Javascript -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SECTION INFO TAMBAHAN -->
+    <section class="pb-16 pt-4 bg-surface-kertas">
+      <div class="w-full max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="scroll-reveal relative overflow-hidden rounded-2xl bg-surface-card border border-border-subtle p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+          <div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary-container"></div>
+          <div class="flex items-start gap-4 max-w-3xl">
+            <div class="w-12 h-12 rounded-xl bg-secondary-container/15 flex-shrink-0 flex items-center justify-center text-secondary">
+              <span class="material-symbols-outlined text-[28px]">warning</span>
+            </div>
+            <div>
+              <h3 class="font-headline-md text-lg font-bold text-text-tinta mb-1.5 flex items-center gap-2">
+                Pemberitahuan Penting
+                <span class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-secondary-container/20 text-on-secondary-container uppercase tracking-wider">Perhatian</span>
+              </h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Jadwal dapat berubah sewaktu-waktu sesuai dengan kebijakan dosen pengajar atau hari libur nasional. Harap selalu memeriksa pengumuman di grup WhatsApp kelas untuk informasi perubahan jadwal darurat.
+              </p>
+            </div>
+          </div>
+          <a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary-container text-surface-kertas font-headline-md font-semibold text-sm hover:bg-hutan-malam-dark transition-all border border-tertiary-fixed/30" href="https://whatsapp.com/channel/0029VbE36AC3mFYCd5PMlM2w" target="_blank" rel="noopener noreferrer">
+          <span class="material-symbols-outlined text-[20px] text-tertiary-fixed">forum</span>
+           Buka WhatsApp Grup
+           </a>
+            <a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-surface-kertas text-text-tinta border border-border-subtle hover:border-tertiary-fixed font-headline-md font-semibold text-sm transition-all" href="contact.html">
+              Hubungi Ketua Kelas
+            </a>
+          </div>
+        </div> 
+      </div>
+    </section>
+  </main>
+
+  <!-- 5. MOBILE BOTTOM NAVIGATION BAR -->
+  <div class="mobile-bottom-nav">
+    <a href="home.html" class="nav-item">
+      <span class="material-symbols-outlined">home</span>
+    </a>
+    <a href="profil.html" class="nav-item">
+      <span class="material-symbols-outlined">group</span>
+    </a>
+    <a href="album.html" class="nav-item">
+      <span class="material-symbols-outlined">photo_library</span>
+    </a>
+    <a href="jadwal.html" class="nav-item active">
+      <span class="material-symbols-outlined">calendar_month</span>
+    </a>
+  </div>
+
+  <!-- 6. FOOTER -->
+  <footer class="bg-gradient-to-b from-primary-container to-hutan-malam-dark text-on-primary border-t border-tertiary-fixed/15">
+    <div class="w-full px-6 lg:px-12 py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mx-auto max-w-7xl">
+      <div class="text-left space-y-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed sinyal-glow"></span>
+          <span class="font-headline-md text-lg font-bold text-white tracking-tight">TI Reg D BJM</span>
+        </div>
+        <p class="text-xs text-on-primary/70 max-w-md leading-relaxed">Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-mono text-on-primary/70">
+        <p>© 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script JS -->
+  <script src="js/jadwal.js"></script>
 </body>
 </html>

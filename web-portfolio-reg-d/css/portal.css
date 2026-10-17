@@ -1,0 +1,232 @@
+/* Cinematic Background Grid & Atmosphere */
+.digital-river-grid {
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(79, 217, 196, 0.08) 0%, transparent 65%),
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+  
+@keyframes pulseOrbitalSlow {
+    0%, 100% { transform: rotate(0deg) scale(1); opacity: 0.7; }
+    50% { transform: rotate(180deg) scale(1.04); opacity: 1; }
+}
+
+@keyframes pulseOrbitalReverse {
+    0%, 100% { transform: rotate(360deg) scale(1.02); }
+    50% { transform: rotate(180deg) scale(0.98); }
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(0px) translateX(0px); opacity: 0.2; }
+    50% { opacity: 0.8; }
+    100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
+}
+
+@keyframes riverWaveFlow {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 1000; }
+}
+
+@keyframes soundwaveAnim {
+    0%, 100% { height: 4px; }
+    50% { height: 18px; }
+}
+
+.orbital-ring-outer {
+    animation: pulseOrbitalSlow 24s linear infinite;
+}
+
+.orbital-ring-inner {
+    animation: pulseOrbitalReverse 16s linear infinite;
+}
+
+.river-stream-line {
+    stroke-dasharray: 20 8;
+    animation: riverWaveFlow 40s linear infinite;
+}
+
+.soundbar:nth-child(1) { animation: soundwaveAnim 1.1s ease-in-out infinite; }
+.soundbar:nth-child(2) { animation: soundwaveAnim 0.8s ease-in-out 0.2s infinite; }
+.soundbar:nth-child(3) { animation: soundwaveAnim 1.4s ease-in-out 0.4s infinite; }
+.soundbar:nth-child(4) { animation: soundwaveAnim 0.9s ease-in-out 0.1s infinite; }
+
+.glow-lampion {
+    box-shadow: 0 0 25px rgba(242, 169, 59, 0.35);
+}
+
+.glow-sinyal {
+    box-shadow: 0 0 25px rgba(79, 217, 196, 0.25);
+}
+
+/* =========================================
+   TAMBAHAN ANIMASI OTOMATIS (Tanpa ubah HTML)
+========================================= */
+
+/* 1. Definisi Keyframes */
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes floatSubtle {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes glowTextPulse {
+    0%, 100% { text-shadow: 0 0 10px rgba(79, 217, 196, 0.3); }
+    50% { text-shadow: 0 0 20px rgba(79, 217, 196, 0.7), 0 0 30px rgba(79, 217, 196, 0.5); }
+}
+
+/* 2. Target Otomatis ke Elemen HTML Anda */
+
+/* Wadah Utama (Zoom In saat masuk dari halaman index) */
+body > div.digital-river-grid {
+    animation: scaleIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Header Navbar */
+header {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.1s;
+}
+
+/* Logo Tengah (Animasi Muncul + Mengambang) */
+main > div.relative.w-36 {
+    opacity: 0;
+    animation: 
+        scaleIn 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.2s,
+        floatSubtle 4s ease-in-out infinite 1s;
+}
+
+/* Teks TI.D Berkedip Halus */
+main .font-display-hero.text-2xl {
+    animation: glowTextPulse 3s infinite;
+}
+
+/* Lencana Angkatan (Badge) */
+main > div.inline-flex {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s;
+}
+
+/* Teks Subjudul */
+main > p.font-headline-md-mobile {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.4s;
+}
+
+/* Judul Utama H1 (Muncul + Glow) */
+main > h1 {
+    opacity: 0;
+    animation: 
+        fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
+        glowTextPulse 3s infinite 1.3s;
+}
+
+/* Paragraf Deskripsi */
+main > p.font-body-md {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.6s;
+}
+
+/* Kotak Terminal Loading */
+main > div.max-w-xl {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.7s;
+}
+
+/* Area Tombol Masuk */
+main > div.max-w-md {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.8s;
+}
+
+/* Grid 3 Metrik (Anggota, Galeri, Fokus) */
+main > div.grid {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.9s;
+}
+
+/* Footer */
+footer {
+    opacity: 0;
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 1s;
+}
+
+/* =========================================
+   6. RESPONSIVE MOBILE & TABLET (OPTIMASI PERFORMA & UI)
+========================================= */
+
+/* --- A. TABLET (max-width: 1024px) --- */
+@media (max-width: 1024px) {
+    /* Menyesuaikan skala grid latar belakang agar tidak terlalu besar di tablet */
+    .digital-river-grid {
+        background-size: 100% 100%, 36px 36px, 36px 36px;
+    }
+}
+
+/* --- B. SMARTPHONE / HP (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* 1. Latar Belakang & Grid */
+    .digital-river-grid {
+        background-size: 100% 100%, 24px 24px, 24px 24px;
+    }
+
+    /* 2. Mempercepat Transisi Muncul Elemen (Anti-Bosan Menunggu di HP) */
+    header { animation-delay: 0.1s !important; }
+    main > div.relative.w-36 { animation-delay: 0.1s, 0.4s !important; } /* Logo Tengah */
+    main > div.inline-flex { animation-delay: 0.2s !important; } /* Badge Angkatan */
+    main > p.font-headline-md-mobile { animation-delay: 0.25s !important; } /* Sub-judul */
+    main > h1 { animation-delay: 0.3s, 0.8s !important; } /* Judul H1 */
+    main > p.font-body-md { animation-delay: 0.35s !important; } /* Deskripsi */
+    main > div.max-w-xl { animation-delay: 0.4s !important; } /* Terminal Loading */
+    main > div.max-w-md { animation-delay: 0.5s !important; } /* Tombol Masuk */
+    main > div.grid { animation-delay: 0.6s !important; } /* 3 Metrik Bawah */
+    footer { animation-delay: 0.7s !important; }
+
+    /* 3. Optimasi GPU & Baterai HP (Mengurangi Blur yang Berat) */
+    .bg-primary-container\/60,
+    .bg-tertiary-container\/40,
+    .bg-secondary-container\/10 {
+        opacity: 0.25 !important;
+        filter: blur(60px) !important; /* Blur diturunkan agar rendering HP ringan */
+    }
+
+    /* 4. Menyesuaikan Efek Cahaya Teks (Glow) di Layar Kecil */
+    @keyframes glowTextPulse {
+        0%, 100% { text-shadow: 0 0 4px rgba(79, 217, 196, 0.2); }
+        50% { text-shadow: 0 0 8px rgba(79, 217, 196, 0.6), 0 0 12px rgba(79, 217, 196, 0.4); }
+    }
+    
+    /* 5. Menyesuaikan Efek Cahaya Kotak */
+    .glow-sinyal {
+        box-shadow: 0 0 12px rgba(79, 217, 196, 0.2);
+    }
+}
+
+/* --- C. HP LAYAR SANGAT KECIL (max-width: 480px) --- */
+@media (max-width: 480px) {
+    /* Grid lebih rapat untuk mengakomodasi layar sempit */
+    .digital-river-grid {
+        background-size: 100% 100%, 20px 20px, 20px 20px;
+    }
+    
+    /* Mengurangi amplitudo mengambang agar tidak pusing dilihat di layar sempit */
+    @keyframes floatSubtle {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+    }
+
+    /* Penyesuaian laju animasi garis sungai digital (SVG) */
+    @keyframes riverWaveFlow {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 400; } 
+    }
+}

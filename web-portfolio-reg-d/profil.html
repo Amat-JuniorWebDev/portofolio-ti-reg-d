@@ -1,138 +1,468 @@
 <!DOCTYPE html>
-<html lang="id">
+<html class="scroll-smooth" lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Kelas - TI Reg D BJM</title>
-    
-    <!-- Font Premium: Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Phosphor Icons -->
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <!-- Memanggil CSS Utama (Untuk Navbar & Footer) -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Memanggil CSS Khusus Halaman Profil -->
-    <link rel="stylesheet" href="css/profil.css?v=1.0">
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Profil Lengkap Kelas | TI Reg D BJM - UNISKA MAB</title>
+
+  <!-- Google Fonts: Sora & Inter -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+  
+  <!-- Material Symbols Outlined -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+  <!-- Realtime Cache Busting CSS -->
+  <script>
+      document.write('<link rel="stylesheet" href="css/profil.css?v=' + new Date().getTime() + '">');
+  </script>
+
+  <!-- TAILWIND CSS ENGINE -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "secondary": "#835400",
+            "surface-tint": "#44655d",
+            "text-tinta": "#10231F",
+            "on-background": "#101e1a",
+            "on-tertiary-container": "#00a593",
+            "primary-container": "#10312b",
+            "error": "#ba1a1a",
+            "error-container": "#ffdad6",
+            "background": "#edfdf6",
+            "inverse-primary": "#abcec5",
+            "border-subtle": "#E2E5DE",
+            "hutan-malam-dark": "#0A211C",
+            "on-secondary": "#ffffff",
+            "primary-fixed": "#c7eae0",
+            "on-surface": "#101e1a",
+            "inverse-surface": "#25332f",
+            "on-tertiary-fixed": "#00201b",
+            "inverse-on-surface": "#e4f4ee",
+            "on-primary-fixed-variant": "#2d4d46",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface-container-highest": "#d6e6e0",
+            "secondary-fixed": "#ffddb5",
+            "secondary-fixed-dim": "#ffb956",
+            "tertiary-fixed-dim": "#52dbc6",
+            "tertiary": "#001b17",
+            "outline": "#717976",
+            "on-secondary-fixed": "#2a1800",
+            "on-primary-fixed": "#00201b",
+            "primary-fixed-dim": "#abcec5",
+            "surface-container-high": "#dcece5",
+            "surface-container-low": "#e7f7f1",
+            "on-secondary-fixed-variant": "#633f00",
+            "on-surface-variant": "#414846",
+            "surface-variant": "#d6e6e0",
+            "surface-dim": "#cdded7",
+            "on-tertiary-fixed-variant": "#005047",
+            "surface": "#edfdf6",
+            "primary": "#001b17",
+            "on-primary-container": "#789a92",
+            "tertiary-fixed": "#73f8e2",
+            "surface-container": "#e1f2eb",
+            "surface-bright": "#edfdf6",
+            "surface-kertas": "#F5F6F3",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "outline-variant": "#c1c8c5",
+            "surface-card": "#FFFFFF",
+            "on-secondary-container": "#6e4600",
+            "secondary-container": "#fdb244",
+            "tertiary-container": "#00322b"
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          fontFamily: {
+            "headline-lg": ["Sora", "sans-serif"],
+            "body-lg-mobile": ["Inter", "sans-serif"],
+            "headline-md": ["Sora", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "headline-lg-mobile": ["Sora", "sans-serif"],
+            "headline-md-mobile": ["Sora", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "label-sm": ["Inter", "sans-serif"],
+            "label-md": ["Inter", "sans-serif"],
+            "display-hero": ["Sora", "sans-serif"],
+            "display-hero-mobile": ["Sora", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body>
+<body class="bg-surface-kertas text-text-tinta font-body-md text-[14px] antialiased selection:bg-tertiary-fixed selection:text-primary-container">
 
-    <!-- BACKGROUND GLOW EFEK -->
-    <div class="bg-glow glow-purple"></div>
-    <div class="bg-glow glow-blue"></div>
+  <!-- BACKGROUND GLOW EFEK -->
+  <div class="bg-ambient-glow glow-cyan"></div>
+  <div class="bg-ambient-glow glow-amber"></div>
 
-    <!-- NAVBAR PREMIUM -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                TI Reg <span>D BJM</span>
-            </div>
-            <ul class="nav-links">
-                <!-- Perhatikan: Class 'active' sekarang pindah ke menu Profil -->
-                <li><a href="home.html">Beranda</a></li>
-                <li><a href="profil.html" class="active">Profil</a></li>
-                <li><a href="album.html">Album Kelas</a></li>
-                <li><a href="jadwal.html">Jadwal</a></li>
-            </ul>
-            <a href="contact.html" class="btn-neon">Contact Us</a>
+  <!-- 1. TOP NAVBAR (Disamakan persis dengan home.html) -->
+  <header class="bg-hutan-malam-dark/90 backdrop-blur-md top-0 z-50 sticky border-b border-tertiary-fixed/15 shadow-sm">
+    <div class="w-full px-4 sm:px-6 lg:px-12 py-3.5 flex items-center justify-between mx-auto max-w-7xl">
+      <!-- Brand Logo Anchor -->
+      <a class="flex items-center gap-2.5 group" href="home.html">
+        <span class="relative flex h-3 w-3 flex-shrink-0">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-tertiary-fixed sinyal-glow"></span>
+        </span>
+        <div class="flex flex-col text-left">
+          <span class="font-headline-md text-[15px] sm:text-[17px] font-bold text-white tracking-tight group-hover:text-tertiary-fixed transition-colors duration-200">TI Reg D BJM</span>
+          <span class="text-[9px] uppercase font-mono tracking-wider text-on-primary/50 -mt-0.5">Teknik Informatika Banjarmasin</span>
         </div>
-    </nav>
+      </a>
+      
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 bg-white/5 border border-white/10 p-1.5 rounded-full backdrop-blur-sm">
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="home.html">Beranda</a>
+        <!-- Profil Aktif -->
+        <a class="px-4 py-1.5 text-tertiary-fixed font-semibold bg-tertiary-fixed/15 rounded-full font-label-md text-xs transition-all duration-200" href="profil.html">Profil</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="album.html">Album Kelas</a>
+        <a class="px-4 py-1.5 text-on-primary/80 hover:text-white hover:bg-white/5 rounded-full font-medium font-label-md text-xs transition-all duration-200" href="jadwal.html">Jadwal</a>
+      </nav>
 
-    <!-- HEADER PROFIL (Hero Khusus Profil) -->
-    <section class="profil-hero">
-        <div class="container text-center">
-            <div class="badge-neon mx-auto reveal-item">
-                <i class="ph-fill ph-identification-card"></i> Tentang Kami
-            </div>
-            <h1 class="profil-title reveal-item delay-1">Mengenal Lebih Dekat <br><span class="text-gradient">TI Reg D BJM</span></h1>
-            <p class="profil-subtitle reveal-item delay-2">Kami adalah angkatan 2026 Teknik Informatika yang berfokus pada kolaborasi, inovasi digital, dan pemecahan masalah teknologi di Kalimantan Selatan.</p>
-        </div>
-    </section>
-
-    <!-- VISI & MISI SECTION -->
-    <section class="visi-misi-section section-darker">
-        <div class="container">
-            <div class="vm-grid">
-                <!-- Kartu Visi -->
-                <div class="glass-card vm-card reveal-item">
-                    <div class="vm-icon"><i class="ph-fill ph-eye"></i></div>
-                    <h3>Visi Kelas</h3>
-                    <p>Menjadi pionir talenta digital muda yang inovatif, berdaya saing tinggi dalam industri teknologi informasi, dan mampu menciptakan solusi cerdas yang bermanfaat bagi masyarakat luas.</p>
-                </div>
-                
-                <!-- Kartu Misi -->
-                <div class="glass-card vm-card reveal-item delay-1">
-                    <div class="vm-icon"><i class="ph-fill ph-target"></i></div>
-                    <h3>Misi Kelas</h3>
-                    <ul class="misi-list">
-                        <li><i class="ph-bold ph-check-circle"></i> Membangun ekosistem belajar yang kolaboratif.</li>
-                        <li><i class="ph-bold ph-check-circle"></i> Menguasai fondasi web development dan jaringan komputer.</li>
-                        <li><i class="ph-bold ph-check-circle"></i> Menciptakan portofolio nyata yang siap bersaing di dunia kerja.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEJARAH / CERITA KAMI -->
-    <section class="cerita-section section-dark">
-        <div class="container cerita-layout">
-            <div class="cerita-teks reveal-item">
-                <h2 class="section-title">Awal Mula <span class="text-gradient">Perjalanan</span></h2>
-                <p>Terbentuk pada tahun 2026, kelas TI Reg D Banjarmasin mengumpulkan berbagai individu dengan latar belakang berbeda, namun memiliki satu tujuan yang sama: menguasai teknologi.</p>
-                <p>Dari tugas-tugas awal pemrograman dasar hingga merakit topologi jaringan kompleks, kami terus mendukung satu sama lain. Ruang kelas kami bukan hanya tempat mendengarkan teori, melainkan laboratorium ide di mana setiap error (bug) adalah pelajaran, dan setiap keberhasilan adalah perayaan bersama.</p>
-            </div>
-            <div class="cerita-visual reveal-item delay-1">
-                <!-- Anda bisa mengganti gambar ini dengan foto nyata atau ilustrasi lain -->
-                <div class="image-frame">
-                    <img src="assets/images/bg-team.jpg" alt="Foto Perjalanan Kelas" onerror="this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop';">
-                    <div class="frame-border"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
-    <div class="mobile-bottom-nav">
-        <!-- Beranda -->
-        <a href="home.html" class="nav-item">
-            <i class="ph-bold ph-house"></i>
-            <span>Beranda</span>
+     <!-- Trailing Action Buttons -->
+      <div class="flex items-center gap-2">
+        <a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-secondary-container hover:bg-secondary-fixed text-hutan-malam-dark font-label-md text-xs font-bold transition-all duration-200 active:scale-95 lampion-glow shadow-sm" href="contact.html">
+          <span class="material-symbols-outlined text-[15px]">mail</span>
+          <span>Contact Us</span>
         </a>
-        <!-- Album -->
-        <a href="album.html" class="nav-item">
-            <i class="ph-bold ph-squares-four"></i>
-            <span>Album</span>
-        </a>
-        <!-- Jadwal -->
-        <a href="jadwal.html" class="nav-item">
-            <i class="ph-bold ph-calendar"></i>
-            <span>Jadwal</span>
-        </a>
-        <!-- Profil (Aktif di halaman ini) -->
-        <a href="profil.html" class="nav-item active">
-            <i class="ph-bold ph-user"></i>
-            <span>Profil</span>
-        </a>
+      </div>
     </div>
+  </header>
 
-    <!-- FOOTER (Sama dengan home) -->
-    <footer>
-        <div class="container footer-content">
-            <div class="f-left">
-                <h2>TI Reg D <span>BJM</span></h2>
-                <p>Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+  <main>
+    <!-- 2. HERO SECTION PROFIL -->
+    <section class="relative bg-gradient-to-b from-primary-container via-[#0d2722] to-hutan-malam-dark text-on-primary pt-16 lg:pt-24 overflow-hidden">
+      <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(#73f8e2 1px, transparent 1px); background-size: 32px 32px;"></div>
+      
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 pb-16">
+        <div class="max-w-3xl">
+          <div class="scroll-reveal inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-tertiary-fixed/30 text-tertiary-fixed font-label-sm text-xs tracking-wide uppercase backdrop-blur-md shadow-sm mb-6">
+            <span class="material-symbols-outlined text-[15px]">groups</span>
+            <span>Tentang Kami</span>
+          </div>
+          
+          <h1 class="scroll-reveal font-display-hero text-[32px] sm:text-[40px] md:text-[56px] font-bold text-white tracking-tight leading-tight mb-4">
+            Mengenal Lebih Dekat <br/><span class="text-tertiary-fixed drop-shadow-sm">TI Reg D BJM</span>
+          </h1>
+          <p class="scroll-reveal font-body-lg text-[14px] sm:text-[16px] text-on-primary/85 max-w-2xl leading-relaxed mb-10">
+            Kami adalah angkatan 2026 Teknik Informatika yang berfokus pada kolaborasi, inovasi digital, dan pemecahan masalah teknologi di Kalimantan Selatan.
+          </p>
+          
+          <!-- Frosted Metric Badges -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="scroll-reveal p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col hover:bg-white/10 transition-colors duration-300">
+              <div class="flex items-center gap-2 text-secondary-container mb-1">
+                <span class="material-symbols-outlined text-[20px]">groups</span>
+                <span class="text-[24px] font-headline-md font-bold text-white">30+</span>
+              </div>
+              <span class="text-[11px] font-label-sm text-on-primary/70 uppercase tracking-wider">Mahasiswa Aktif</span>
             </div>
-            <div class="f-right">
-                <p>&copy; 2026 Crafted by Rahmat - Tim IT TI Reg D BJM.</p>
+            <div class="scroll-reveal p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col hover:bg-white/10 transition-colors duration-300">
+              <div class="flex items-center gap-2 text-secondary-container mb-1">
+                <span class="material-symbols-outlined text-[20px]">calendar_month</span>
+                <span class="text-[24px] font-headline-md font-bold text-white">2023/24</span>
+              </div>
+              <span class="text-[11px] font-label-sm text-on-primary/70 uppercase tracking-wider">Angkatan Masuk</span>
             </div>
+            <div class="scroll-reveal p-4 rounded-xl bg-white/5 border border-white/10 backdrop-blur-md flex flex-col hover:bg-white/10 transition-colors duration-300">
+              <div class="flex items-center gap-2 text-tertiary-fixed mb-1">
+                <span class="material-symbols-outlined text-[20px]">apartment</span>
+                <span class="text-[24px] font-headline-md font-bold text-white">2</span>
+              </div>
+              <span class="text-[11px] font-label-sm text-on-primary/70 uppercase tracking-wider">Sentra Kampus</span>
+            </div>
+          </div>
         </div>
-    </footer>
+      </div>
+      
+      <!-- OMBAK SVG -->
+      <div class="w-full overflow-hidden leading-none mt-10 sm:mt-16 -mb-[1px] relative z-20">
+        <svg class="relative block w-full h-12 lg:h-20" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 120">
+          <path d="M0,32L60,42.7C120,53,240,75,360,80C480,85,600,75,720,58.7C840,43,960,21,1080,21.3C1200,21,1320,43,1380,53.3L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z" fill="#F5F6F3"></path>
+        </svg>
+      </div>
+    </section>
 
-    <!-- Memanggil JS Khusus Halaman Profil -->
-    <script src="js/profil.js"></script>
+    <!-- 3. SECTION VISI & MISI KELAS -->
+    <section class="py-16 lg:py-20 bg-surface-kertas relative">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="scroll-reveal max-w-2xl mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container/10 border border-tertiary-fixed-dim/20 text-text-tinta text-xs font-label-sm mb-3">
+            <span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">flag</span>
+            <span>Orientasi Fundamental</span>
+          </div>
+          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-text-tinta font-bold tracking-tight">Visi & Misi Strategis</h2>
+          <p class="font-body-md text-on-surface-variant mt-2 leading-relaxed">Pedoman arah langkah perkuliahan, riset komputasi, dan pengabdian mahasiswa dalam alur digital Kalimantan Selatan.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          <div class="scroll-reveal lg:col-span-5 bg-surface-card rounded-xl border border-border-subtle p-7 relative flex flex-col justify-between overflow-hidden shadow-sm hover:border-tertiary-fixed-dim transition-colors duration-300 hover:shadow-lg">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-secondary-container to-secondary-fixed"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container mb-6 border border-border-subtle">
+                <span class="material-symbols-outlined text-[26px]">visibility</span>
+              </div>
+              <span class="font-label-sm text-xs uppercase tracking-wider text-secondary font-bold">Visi Komunitas</span>
+              <h3 class="font-headline-md text-lg text-text-tinta font-bold mt-2 mb-4">Pionir Talenta Digital Muda Banua</h3>
+              <p class="font-body-md text-on-surface-variant leading-relaxed italic">“Menjadi pionir talenta digital muda yang inovatif, berdaya saing tinggi dalam industri teknologi informasi, dan mampu menciptakan solusi cerdas yang bermanfaat bagi masyarakat luas.”</p>
+            </div>
+            <div class="mt-8 pt-6 border-t border-border-subtle flex items-center gap-3">
+              <span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+              <span class="font-label-sm text-xs text-on-surface-variant font-medium">FTI • UNISKA Banjarmasin</span>
+            </div>
+          </div>
+          
+          <div class="scroll-reveal lg:col-span-7 bg-surface-card rounded-xl border border-border-subtle p-7 relative flex flex-col justify-between overflow-hidden shadow-sm hover:border-tertiary-fixed-dim transition-colors duration-300 hover:shadow-lg">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-tertiary-fixed to-tertiary-fixed-dim"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary-container mb-6 border border-border-subtle">
+                <span class="material-symbols-outlined text-[26px]">track_changes</span>
+              </div>
+              <span class="font-label-sm text-xs uppercase tracking-wider text-secondary font-bold">Misi Terencana</span>
+              <h3 class="font-headline-md text-lg text-text-tinta font-bold mt-2 mb-6">Langkah Nyata Mahasiswa Berkelanjutan</h3>
+              <ul class="space-y-6">
+                <li class="flex items-start gap-4">
+                  <div class="w-7 h-7 rounded-full bg-tertiary-fixed/10 text-primary-container flex items-center justify-center flex-shrink-0 mt-0.5 border border-tertiary-fixed/20 font-bold text-xs">1</div>
+                  <div>
+                    <h4 class="font-bold text-text-tinta font-body-lg text-[16px]">Membangun Ekosistem Belajar Kolaboratif</h4>
+                    <p class="text-on-surface-variant font-body-md mt-1.5 leading-relaxed">Mendorong atmosfer belajar yang solid dan saling mendukung melalui studi kelompok, sharing session teknologi, dan penyelesaian tugas bersama.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-7 h-7 rounded-full bg-tertiary-fixed/10 text-primary-container flex items-center justify-center flex-shrink-0 mt-0.5 border border-tertiary-fixed/20 font-bold text-xs">2</div>
+                  <div>
+                    <h4 class="font-bold text-text-tinta font-body-lg text-[16px]">Menguasai Fondasi Web & Jaringan Komputer</h4>
+                    <p class="text-on-surface-variant font-body-md mt-1.5 leading-relaxed">Mendalami aspek fundamental rekayasa web modern, perancangan basis data terstruktur, serta konfigurasi jaringan yang teruji.</p>
+                  </div>
+                </li>
+                <li class="flex items-start gap-4">
+                  <div class="w-7 h-7 rounded-full bg-tertiary-fixed/10 text-primary-container flex items-center justify-center flex-shrink-0 mt-0.5 border border-tertiary-fixed/20 font-bold text-xs">3</div>
+                  <div>
+                    <h4 class="font-bold text-text-tinta font-body-lg text-[16px]">Menciptakan Portofolio Nyata Siap Kerja</h4>
+                    <p class="text-on-surface-variant font-body-md mt-1.5 leading-relaxed">Menghasilkan karya proyek digital aplikatif yang siap dipresentasikan ke industri profesional dan memberi solusi langsung.</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SEJARAH / CERITA KAMI SECTION -->
+    <section class="py-16 lg:py-24 bg-surface-container-low border-y border-border-subtle relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="scroll-reveal lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-container/15 border border-secondary-container/30 text-secondary font-bold text-xs font-label-sm mb-4">
+              <span class="material-symbols-outlined text-[16px]">auto_stories</span>
+              <span>Awal Mula Perjalanan</span>
+            </div>
+            <h2 class="font-headline-lg text-[28px] md:text-[36px] text-text-tinta font-bold tracking-tight mb-6">Menempa Karakter & Inovasi di Laboratorium Ide Kelas</h2>
+            <div class="space-y-4 text-on-surface-variant font-body-lg leading-relaxed">
+              <p>Terbentuk sejak gerbang perkuliahan semester awal dibuka, kelas <strong>TI Reguler D Banjarmasin (Angkatan 2026)</strong> Universitas Islam Kalimantan MAB Banjarmasin tumbuh bukan sekadar sebagai ruang tatap muka akademis, melainkan laboratorium ide kolaboratif.</p>
+              <p>Dari praktikum pemrograman baris-demi-baris hingga diskusi larut malam membedah logika basis data, setiap anggota saling melengkapi. Kami meyakini bahwa penguasaan teknologi informatika tidak hanya soal kecepatan menulis kode, tetapi juga kemampuan mendengarkan, bekerja dalam keselarasan tim, dan merancang solusi nyata.</p>
+            </div>
+            <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 border-t border-border-subtle">
+              <div class="flex flex-col">
+                <span class="font-headline-md font-bold text-text-tinta text-lg">Solidaritas</span>
+                <span class="font-label-sm text-xs text-outline mt-1 font-medium">Keluarga Besar Banua</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-headline-md font-bold text-text-tinta text-lg">Inovatif</span>
+                <span class="font-label-sm text-xs text-outline mt-1 font-medium">Eksplorasi Modern</span>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-headline-md font-bold text-text-tinta text-lg">Responsif</span>
+                <span class="font-label-sm text-xs text-outline mt-1 font-medium">Siap Tantangan Industri</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="scroll-reveal lg:col-span-5 relative">
+            <div class="relative rounded-2xl p-2.5 bg-gradient-to-tr from-primary-container via-surface-card to-tertiary-fixed/30 shadow-xl border border-white/60">
+              <div class="overflow-hidden rounded-xl bg-hutan-malam-dark relative aspect-[4/3]">
+                <img alt="Suasana perkuliahan" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1000&auto=format&fit=crop"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-hutan-malam-dark/80 via-transparent to-transparent"></div>
+                <div class="absolute bottom-5 left-5 right-5 text-surface-kertas">
+                  <p class="text-[10px] font-label-sm uppercase tracking-wider text-tertiary-fixed font-bold">Kebersamaan & Pembelajaran</p>
+                  <p class="font-headline-md text-[16px] font-bold mt-1 text-white leading-snug">Sinergi Mahasiswa TI Reg D</p>
+                </div>
+              </div>
+              <div class="absolute -top-4 -right-4 w-24 h-24 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+              <div class="absolute -bottom-4 -left-4 w-24 h-24 bg-tertiary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SECTION NILAI BUDAYA KELAS -->
+    <section class="py-16 lg:py-20 bg-surface-kertas">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="scroll-reveal max-w-2xl mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-tertiary-container/10 border border-tertiary-fixed-dim/20 text-text-tinta text-xs font-label-sm mb-3">
+            <span class="material-symbols-outlined text-[16px] text-tertiary-fixed-dim">psychology</span>
+            <span>Karakteristik & Etos</span>
+          </div>
+          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-text-tinta font-bold tracking-tight">Nilai Keutamaan Mahasiswa</h2>
+          <p class="font-body-md text-on-surface-variant mt-2 leading-relaxed">Filosofi Sungai Digital: mengalir bersama mengatasi hambatan dengan ketangguhan, keteraturan, dan rasa kekeluargaan.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="scroll-reveal bg-surface-card rounded-xl border border-border-subtle p-7 relative overflow-hidden group hover:border-tertiary-fixed-dim transition-colors duration-300 flex flex-col justify-between hover:shadow-lg">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary-container"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary-container flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-[26px]">diversity_3</span>
+              </div>
+              <h3 class="font-headline-md text-lg text-text-tinta font-bold mb-3">Kompak & Kolaboratif</h3>
+              <p class="font-body-md text-on-surface-variant leading-relaxed">Selalu berbagi catatan kuliah, modul terstruktur, referensi kode, serta mengadakan peer-programming sebelum presentasi project.</p>
+            </div>
+            <div class="mt-6 pt-5 border-t border-border-subtle flex items-center gap-2 font-label-sm text-xs text-primary font-bold uppercase tracking-wider">
+              <span class="material-symbols-outlined text-[16px]">check_circle</span>
+              <span>No Student Left Behind</span>
+            </div>
+          </div>
+          
+          <div class="scroll-reveal bg-surface-card rounded-xl border border-border-subtle p-7 relative overflow-hidden group hover:border-tertiary-fixed-dim transition-colors duration-300 flex flex-col justify-between hover:shadow-lg">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary-container"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary-container flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-[26px]">alarm_on</span>
+              </div>
+              <h3 class="font-headline-md text-lg text-text-tinta font-bold mb-3">Tertib & Tanggap</h3>
+              <p class="font-body-md text-on-surface-variant leading-relaxed">Manajemen pengingat tugas terkoordinasi melalui channel WhatsApp resmi kelas, memastikan praktikum selesai tepat waktu.</p>
+            </div>
+            <div class="mt-6 pt-5 border-t border-border-subtle flex items-center gap-2 font-label-sm text-xs text-primary font-bold uppercase tracking-wider">
+              <span class="material-symbols-outlined text-[16px]">check_circle</span>
+              <span>Presensi Tepat Waktu</span>
+            </div>
+          </div>
+          
+          <div class="scroll-reveal bg-surface-card rounded-xl border border-border-subtle p-7 relative overflow-hidden group hover:border-tertiary-fixed-dim transition-colors duration-300 flex flex-col justify-between hover:shadow-lg">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-secondary-container"></div>
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary-container flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-[26px]">lightbulb</span>
+              </div>
+              <h3 class="font-headline-md text-lg text-text-tinta font-bold mb-3">Eksploratif & Solutif</h3>
+              <p class="font-body-md text-on-surface-variant leading-relaxed">Aktif mengulik teknologi di luar silabus, mengikuti bootcamp eksternal, lomba IT Banua, serta menyumbang ide pemecahan masalah digital.</p>
+            </div>
+            <div class="mt-6 pt-5 border-t border-border-subtle flex items-center gap-2 font-label-sm text-xs text-primary font-bold uppercase tracking-wider">
+              <span class="material-symbols-outlined text-[16px]">check_circle</span>
+              <span>Growth Mindset</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SECTION STRUKTUR ORGANISASI KELAS -->
+    <section class="py-16 lg:py-24 bg-surface-container border-y border-border-subtle relative">
+      <div class="max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="scroll-reveal max-w-2xl mx-auto text-center mb-14">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary-container text-surface-kertas text-xs font-label-sm mb-3 shadow-sm">
+            <span class="material-symbols-outlined text-[14px] text-tertiary-fixed">account_tree</span>
+            <span>Bagan Kepengurusan Resmi</span>
+          </div>
+          <h2 class="font-headline-lg text-[28px] md:text-[36px] text-text-tinta font-bold tracking-tight">Struktur Organisasi Kelas</h2>
+          <p class="font-body-md text-on-surface-variant mt-2 leading-relaxed">Pengurus inti yang memimpin jalannya koordinasi, komunikasi dosen, dan ekosistem akademik TI Reg D Banjarmasin.</p>
+        </div>
+        
+        <div class="max-w-3xl mx-auto flex flex-col items-center">
+          <!-- KETUA KELAS -->
+          <div class="scroll-reveal w-full max-w-md bg-surface-card rounded-2xl border-2 border-primary-container p-6 relative shadow-md hover:border-tertiary-fixed transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-primary-container text-tertiary-fixed flex items-center justify-center font-bold text-[24px] font-headline-md flex-shrink-0 border border-tertiary-fixed/30 shadow-sm">RR</div>
+              <div class="text-left">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-label-sm bg-secondary-container/30 text-secondary font-bold uppercase tracking-wider inline-block mb-1">Ketua Kelas</span>
+                <h4 class="font-headline-md text-lg text-text-tinta font-bold leading-none">Rahmat Ridha Amrullah</h4>
+                <p class="text-on-surface-variant text-xs font-label-md mt-1">Lead Coordinator & Fullstack Explorer</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="w-[2px] h-8 bg-tertiary-fixed-dim/80"></div>
+          
+          <!-- WAKIL KETUA -->
+          <div class="scroll-reveal w-full max-w-md bg-surface-card rounded-2xl border border-border-subtle p-6 relative shadow-sm hover:border-tertiary-fixed transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+            <div class="flex items-center gap-4">
+              <div class="w-14 h-14 rounded-xl bg-surface-container-high text-primary-container flex items-center justify-center font-bold text-[24px] font-headline-md flex-shrink-0">NS</div>
+              <div class="text-left">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-label-sm bg-tertiary-fixed/20 text-primary-container font-bold uppercase tracking-wider inline-block mb-1">Wakil Ketua</span>
+                <h4 class="font-headline-md text-lg text-text-tinta font-bold leading-none">Nasywa Syaira Pratama</h4>
+                <p class="text-on-surface-variant text-xs font-label-md mt-1">Co-Lead & Project Manager</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- SUMMARY ANGGOTA -->
+          <div class="scroll-reveal mt-12 w-full max-w-xl p-5 rounded-2xl bg-surface-card border border-border-subtle shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-tertiary-fixed/20 text-primary-container flex items-center justify-center font-bold"><span class="material-symbols-outlined text-[20px]">groups</span></div>
+              <div class="text-left">
+                <p class="text-sm font-bold text-text-tinta font-headline-md">30+ Mahasiswa / Mahasiswi TI Reg D BJM</p>
+                <p class="text-[11px] text-on-surface-variant font-body-md mt-0.5">Keluarga besar kelas TI Reguler D Universitas Islam Kalimantan MAB</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full bg-secondary-fixed/40 text-secondary text-xs font-label-md font-bold">Anggota Kelas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 7. FOOTER -->
+  <footer class="bg-gradient-to-b from-primary-container to-hutan-malam-dark text-on-primary border-t border-tertiary-fixed/15">
+    <div class="w-full px-6 lg:px-12 py-12 flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mx-auto max-w-7xl">
+      <div class="text-left space-y-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-2.5 h-2.5 rounded-full bg-tertiary-fixed sinyal-glow"></span>
+          <span class="font-headline-md text-lg font-bold text-white tracking-tight">TI Reg D BJM</span>
+        </div>
+        <p class="font-body-md text-xs text-on-primary/70 max-w-md leading-relaxed">Menciptakan Website Yang Inovatif, Fungsional, dan User-Friendly.</p>
+      </div>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs font-label-md text-on-primary/70 font-mono">
+        <p>© 2026 Crafted by Rahmat - Junior Web Dev.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM NAVIGATION (KHUSUS HP) -->
+  <div class="mobile-bottom-nav">
+    <!-- Ganti tulisan "active" ke menu yang sesuai di masing-masing halaman HTML -->
+    <a href="home.html" class="nav-item">
+      <span class="material-symbols-outlined">home</span>
+    </a>
+    <a href="profil.html" class="nav-item active">
+      <span class="material-symbols-outlined">group</span>
+    </a>
+    <a href="album.html" class="nav-item">
+      <span class="material-symbols-outlined">photo_library</span>
+    </a>
+    <a href="jadwal.html" class="nav-item">
+      <span class="material-symbols-outlined">calendar_month</span>
+    </a>
+  </div>
+
+  <!-- MEMANGGIL FILE JAVASCRIPT -->
+  <script>
+      document.write('<script src="js/script.js?v=' + new Date().getTime() + '"><\/script>');
+  </script>
 </body>
 </html>
